@@ -1,3 +1,3 @@
-theme: minima
-title: Trolly Privacy Policy
-description: Privacy Policy for Trolly — Rental Property Management App by Hai Ng. / craftzcatdev
+exclude:
+  - index.md
+  - PRIVACY_POLICY.md

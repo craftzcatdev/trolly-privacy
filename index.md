@@ -1,6 +1,3 @@
 ---
-layout: default
-title: Trolly Privacy Policy
+layout: none
 ---
-
-{% include_relative PRIVACY_POLICY.md %}
