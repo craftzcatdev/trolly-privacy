@@ -1,6 +1,6 @@
 # Chính Sách Bảo Mật / Privacy Policy
 
-**Ngày có hiệu lực / Effective Date:** Mon 04 May 2026
+**Ngày có hiệu lực / Effective Date:** 04 May 2026
 
 ---
 
@@ -8,87 +8,167 @@
 
 ### 1. Giới Thiệu
 
-Trolly là ứng dụng quản lý nhà trọ dành cho chủ nhà trọ, được phát triển bởi Hai Ng. / craftzcatdev. Ứng dụng giúp quản lý phòng cho thuê, ghi chỉ số điện nước hàng tháng, tính toán hóa đơn tiện ích, và chia sẻ hóa đơn với người thuê qua Zalo.
+**Trolly là công cụ nội bộ riêng tư dành cho gia đình nhà phát triển — KHÔNG phải ứng dụng công cộng.**
 
-Chính sách này mô tả cách chúng tôi thu thập, sử dụng và bảo vệ thông tin của bạn khi sử dụng ứng dụng Trolly.
+Trolly là ứng dụng iOS quản lý nhà trọ được phát triển bởi Hai Ng. (craftzcatdev) để sử dụng nội bộ trong gia đình. Ứng dụng giúp quản lý phòng cho thuê, ghi chỉ số điện nước hàng tháng, tính toán hóa đơn tiện ích, quét và lưu trữ thông tin Căn cước công dân (CCCD) của người thuê theo quy định pháp luật Việt Nam, và chia sẻ hóa đơn với người thuê qua Zalo.
 
-### 2. Thông Tin Chúng Tôi Thu Thập
+**Ứng dụng này KHÔNG mở cho công chúng đăng ký.** Chỉ các thành viên gia đình của nhà phát triển (khoảng 5 người dùng) được cấp quyền truy cập.
 
-#### 2.1 Thông Tin Tài Khoản
-- **Email và mật khẩu:** Khi bạn đăng ký tài khoản quản trị viên thông qua Firebase Authentication, chúng tôi lưu trữ địa chỉ email và mật khẩu đã được mã hóa của bạn.
-- **User ID (UID):** Firebase tự động tạo một mã định danh duy nhất cho tài khoản của bạn.
+### 2. Ai Có Thể Sử Dụng Ứng Dụng Này
 
-#### 2.2 Dữ Liệu Quản Lý Nhà Trọ
-Bạn (với vai trò chủ nhà trọ) nhập các thông tin sau vào ứng dụng:
-- **Thông tin phòng:** Số phòng, giá thuê, diện tích, trạng thái phòng
-- **Thông tin người thuê:** Họ tên, số điện thoại, ngày bắt đầu thuê, ngày kết thúc thuê
-- **Chỉ số điện nước:** Chỉ số điện, chỉ số nước được ghi lại hàng tháng
-- **Hóa đơn:** Thông tin tính toán tiền điện, nước, tiền phòng theo tháng
+Trolly là công cụ riêng tư dành cho gia đình nhà phát triển. **KHÔNG có chức năng đăng ký tài khoản trong ứng dụng.**
 
-Tất cả dữ liệu này được lưu trữ trong Firebase Firestore thuộc dự án Firebase của nhà phát triển.
+- Tài khoản quản trị viên được tạo thủ công bởi nhà phát triển trong Firebase Console
+- Chỉ các thành viên gia đình được nhà phát triển cấp quyền mới có thể sử dụng
+- Ứng dụng không cho phép người dùng tự đăng ký hoặc tạo tài khoản mới
 
-#### 2.3 Thông Tin Thiết Bị và Bảo Mật
-- **Firebase App Check / App Attest:** Để bảo vệ ứng dụng khỏi truy cập trái phép, Firebase App Check có thể thu thập thông tin thiết bị cơ bản (như mã định danh thiết bị tạm thời) để xác minh rằng yêu cầu đến từ ứng dụng chính thức.
-- **Thông tin chẩn đoán Firebase:** Firebase SDK có thể tự động thu thập dữ liệu chẩn đoán cơ bản (như loại thiết bị, phiên bản iOS, thông tin lỗi) để duy trì và cải thiện dịch vụ.
+Nếu bạn cần tài khoản hoặc muốn xóa tài khoản hiện có, vui lòng liên hệ trực tiếp với nhà phát triển tại **craftzcatdev@gmail.com**.
 
-### 3. Cách Chúng Tôi Sử Dụng Thông Tin
+### 3. Thông Tin Chúng Tôi Thu Thập
 
-Chúng tôi sử dụng thông tin thu thập được để:
-- Xác thực danh tính của bạn khi đăng nhập
-- Lưu trữ và quản lý dữ liệu phòng trọ, người thuê, và hóa đơn
-- Tính toán hóa đơn tiện ích hàng tháng
-- Bảo vệ ứng dụng khỏi truy cập trái phép
-- Duy trì và cải thiện chức năng của ứng dụng
+#### 3.1 Thông Tin Tài Khoản Quản Trị Viên
+- **Email và mật khẩu:** Được lưu trữ qua Firebase Authentication (mật khẩu được mã hóa)
+- **User ID (UID):** Mã định danh duy nhất do Firebase tự động tạo
 
-### 4. Chia Sẻ Thông Tin
+#### 3.2 Thông Tin Phòng Trọ
+- Số phòng, giá thuê, diện tích, trạng thái phòng
+- Danh sách ID người thuê đang ở
 
-**Chúng tôi KHÔNG chia sẻ thông tin cá nhân của bạn với bất kỳ bên thứ ba nào**, ngoại trừ:
-- **Firebase/Google Cloud Platform:** Dữ liệu được lưu trữ trên cơ sở hạ tầng Firebase (thuộc Google), tuân theo [Chính sách bảo mật của Google](https://policies.google.com/privacy).
-- **Yêu cầu pháp lý:** Nếu luật pháp yêu cầu, chúng tôi có thể tiết lộ thông tin cho cơ quan có thẩm quyền.
+#### 3.3 Thông Tin Người Thuê (Tenant)
+Theo quy định pháp luật Việt Nam (Thông tư 17/2018/TT-BCA và các quy định liên quan), chủ nhà trọ **bắt buộc phải thu thập và lưu giữ thông tin giấy tờ tùy thân của người thuê**. Ứng dụng thu thập các thông tin sau:
+
+- **Họ và tên** (fullName)
+- **Số Căn cước công dân (CCCD) / Chứng minh nhân dân (CMND)** (personalIdentificationNumber)
+- **Ngày sinh** (dob)
+- **Giới tính** (sex)
+- **Nơi thường trú** (placeOfResidence)
+- **Nơi sinh** (placeOfBirth)
+- **Quốc tịch** (nationality)
+- **Ngày cấp CCCD** (dateOfIssue)
+- **Ngày hết hạn CCCD** (dateOfExpiry)
+- **Nơi cấp CCCD** (placeOfIssue)
+- **Ngày nhận phòng** (checkInDate)
+- **Số tiền đặt cọc** (depositAmount)
+- **Thời gian tạo/cập nhật/xóa bản ghi** (createdAt, updatedAt, deletedAt)
+
+**Tính năng quét CCCD:**
+- Ứng dụng sử dụng camera và/hoặc NFC để quét thông tin từ thẻ CCCD
+- Chỉ các trường văn bản được trích xuất và lưu trữ trong Firestore
+- **KHÔNG lưu trữ hình ảnh CCCD**
+
+#### 3.4 Dữ Liệu Hóa Đơn Hàng Tháng
+- Chỉ số điện, chỉ số nước
+- Tính toán tiền điện, tiền nước, tiền phòng
+- Số người ở trong phòng (numberOfPerson)
+
+#### 3.5 Thông Tin Thiết Bị và Bảo Mật
+- **Firebase App Check / App Attest:** Thu thập mã định danh thiết bị tạm thời để xác minh yêu cầu đến từ ứng dụng chính thức
+- **Dữ liệu chẩn đoán Firebase SDK:** Loại thiết bị, phiên bản iOS, thông tin lỗi (crash data) — được Firebase SDK tự động thu thập
+- **KHÔNG sử dụng Firebase Analytics, Firebase Crashlytics, hoặc bất kỳ SDK theo dõi/quảng cáo nào**
+
+### 4. Mục Đích Sử Dụng Thông Tin
+
+Chúng tôi sử dụng thông tin thu thập được **chỉ** cho các mục đích sau:
+
+1. **Tuân thủ pháp luật Việt Nam:** Lưu trữ thông tin CCCD của người thuê theo quy định của Thông tư 17/2018/TT-BCA về quản lý cư trú tạm trú
+2. **Quản lý nhà trọ:** Theo dõi phòng trống/đã thuê, thông tin người thuê, ngày nhận phòng, tiền đặt cọc
+3. **Tính toán hóa đơn:** Ghi chỉ số điện nước hàng tháng và tính toán chi phí
+4. **Xác thực người dùng:** Đăng nhập tài khoản quản trị viên
+5. **Bảo mật ứng dụng:** Ngăn chặn truy cập trái phép thông qua Firebase App Check
+
+**Dữ liệu KHÔNG được sử dụng cho:**
+- Quảng cáo
+- Phân tích hành vi người dùng
+- Chia sẻ với bên thứ ba (trừ trường hợp pháp luật yêu cầu)
+- Bất kỳ mục đích nào khác ngoài quản lý nhà trọ và tuân thủ pháp luật
+
+### 5. Chia Sẻ Thông Tin
+
+**Chúng tôi KHÔNG chia sẻ thông tin cá nhân với bất kỳ bên thứ ba nào**, ngoại trừ:
+
+#### 5.1 Firebase / Google Cloud Platform
+- Dữ liệu được lưu trữ trên Firebase Firestore (cơ sở hạ tầng của Google)
+- Tuân theo [Chính sách bảo mật của Google](https://policies.google.com/privacy)
+- Firebase chỉ đóng vai trò nhà cung cấp hạ tầng — Google không truy cập hoặc sử dụng dữ liệu người thuê của bạn
+
+#### 5.2 Cơ Quan Có Thẩm Quyền Tại Việt Nam
+- Nếu luật pháp Việt Nam yêu cầu, chúng tôi có thể tiết lộ thông tin cho cơ quan công an, chính quyền địa phương, hoặc cơ quan có thẩm quyền khác
+- Điều này bao gồm việc cung cấp thông tin tạm trú/tạm vắng theo yêu cầu của cơ quan quản lý
+
+#### 5.3 Chia Sẻ Hóa Đơn Qua Zalo
+- Khi bạn chủ động chia sẻ hóa đơn với người thuê qua Zalo, hành động đó do bạn khởi tạo
+- Việc chia sẻ tuân theo chính sách riêng của Zalo
+- Chúng tôi không kiểm soát cách Zalo xử lý dữ liệu sau khi bạn chia sẻ
 
 **Lưu ý quan trọng:**
-- Ứng dụng **KHÔNG sử dụng** bất kỳ SDK quảng cáo, phân tích, hoặc theo dõi hành vi người dùng nào.
-- Thông tin người thuê (tên, số điện thoại) mà bạn nhập vào ứng dụng được lưu trữ trong dự án Firebase của nhà phát triển và không được chia sẻ với bên thứ ba.
-- Khi bạn chia sẻ hóa đơn qua Zalo, việc chia sẻ đó do bạn chủ động thực hiện và tuân theo chính sách của Zalo.
+- Ứng dụng **KHÔNG sử dụng** bất kỳ SDK quảng cáo, phân tích, hoặc theo dõi hành vi người dùng nào
+- Không có tích hợp bên thứ ba nào khác ngoài Firebase
 
-### 5. Bảo Mật Dữ Liệu
+### 6. Bảo Mật Dữ Liệu
 
-Chúng tôi thực hiện các biện pháp bảo mật hợp lý để bảo vệ dữ liệu của bạn:
-- Mật khẩu được mã hóa bởi Firebase Authentication
-- Dữ liệu được truyền tải qua kết nối HTTPS được mã hóa
-- Firebase App Check giúp ngăn chặn truy cập trái phép vào cơ sở dữ liệu
-- Quy tắc bảo mật Firestore được cấu hình để chỉ cho phép người dùng đã xác thực truy cập dữ liệu của họ
+Chúng tôi thực hiện các biện pháp bảo mật hợp lý:
 
-Tuy nhiên, không có phương thức truyền tải hoặc lưu trữ điện tử nào là an toàn 100%. Chúng tôi không thể đảm bảo tuyệt đối về bảo mật.
+- **Mã hóa truyền tải:** Tất cả dữ liệu được truyền qua HTTPS
+- **Mã hóa mật khẩu:** Firebase Authentication mã hóa mật khẩu
+- **Quy tắc bảo mật Firestore:** Chỉ người dùng đã xác thực mới có thể truy cập dữ liệu
+- **Firebase App Check:** Ngăn chặn truy cập trái phép từ ứng dụng giả mạo
+- **Không lưu hình ảnh CCCD:** Chỉ lưu trữ các trường văn bản được trích xuất
 
-### 6. Quyền Của Bạn
+Tuy nhiên, không có phương thức truyền tải hoặc lưu trữ điện tử nào là an toàn tuyệt đối 100%.
 
-Bạn có quyền:
-- **Truy cập:** Xem dữ liệu cá nhân của bạn trong ứng dụng
-- **Chỉnh sửa:** Cập nhật hoặc sửa đổi thông tin trong ứng dụng
-- **Xóa:** Xóa dữ liệu phòng trọ, người thuê, hoặc hóa đơn bất kỳ lúc nào
-- **Xóa tài khoản:** Liên hệ với chúng tôi để xóa hoàn toàn tài khoản và tất cả dữ liệu liên quan
+### 7. Quyền Của Bạn
 
-### 7. Lưu Trữ Dữ Liệu
+#### 7.1 Quyền Truy Cập và Chỉnh Sửa
+- Bạn có thể xem và chỉnh sửa dữ liệu phòng trọ, người thuê, và hóa đơn trong ứng dụng bất kỳ lúc nào
+- Bạn có thể xóa bản ghi người thuê hoặc hóa đơn trong ứng dụng
 
-Dữ liệu của bạn được lưu trữ trên Firebase Firestore (máy chủ của Google Cloud Platform) và sẽ được giữ lại cho đến khi:
+#### 7.2 Xóa Tài Khoản (Apple App Store Guideline 5.1.1(v))
+**Vì Trolly là công cụ nội bộ riêng tư dành cho gia đình nhà phát triển, việc quản lý tài khoản được thực hiện thủ công bởi nhà phát triển.**
+
+- **KHÔNG có chức năng tự xóa tài khoản trong ứng dụng**
+- Tài khoản được tạo và xóa thủ công bởi nhà phát triển trong Firebase Console
+- Nếu bạn muốn xóa tài khoản và tất cả dữ liệu liên quan, vui lòng liên hệ **craftzcatdev@gmail.com**
+- Nhà phát triển cam kết xóa tài khoản và dữ liệu trong vòng 30 ngày kể từ khi nhận yêu cầu
+- Tài khoản sẽ được xóa tự động khi không còn sử dụng hoặc khi ứng dụng ngừng hoạt động
+
+**Lý do không có chức năng tự xóa tài khoản:**
+- Ứng dụng chỉ có ~5 người dùng (thành viên gia đình)
+- Không có quy trình đăng ký công khai
+- Quản lý tài khoản được thực hiện trực tiếp giữa nhà phát triển và người dùng
+
+### 8. Lưu Trữ Dữ Liệu
+
+Dữ liệu được lưu trữ trên Firebase Firestore (Google Cloud Platform) và sẽ được giữ lại cho đến khi:
+
 - Bạn chủ động xóa dữ liệu trong ứng dụng
-- Bạn yêu cầu xóa tài khoản
+- Bạn yêu cầu xóa tài khoản qua email
+- Nhà phát triển xóa tài khoản khi không còn sử dụng
 - Ứng dụng ngừng hoạt động
 
-### 8. Trẻ Em
+**Thời gian lưu trữ thông tin CCCD:**
+- Theo quy định pháp luật Việt Nam, thông tin tạm trú phải được lưu giữ trong thời gian người thuê còn ở và có thể được lưu trữ thêm để phục vụ kiểm tra của cơ quan có thẩm quyền
+- Dữ liệu sẽ được xóa khi không còn cần thiết cho mục đích quản lý hoặc tuân thủ pháp luật
 
-Ứng dụng Trolly không dành cho người dưới 18 tuổi. Chúng tôi không cố ý thu thập thông tin cá nhân từ trẻ em. Nếu bạn phát hiện một trẻ em đã cung cấp thông tin cá nhân cho chúng tôi, vui lòng liên hệ để chúng tôi có thể xóa thông tin đó.
+### 9. Trẻ Em
 
-### 9. Thay Đổi Chính Sách
+Ứng dụng Trolly không dành cho người dưới 18 tuổi. Chúng tôi không cố ý thu thập thông tin cá nhân từ trẻ em dưới 18 tuổi trong vai trò người dùng ứng dụng.
 
-Chúng tôi có thể cập nhật Chính sách bảo mật này theo thời gian. Chúng tôi sẽ thông báo cho bạn về bất kỳ thay đổi nào bằng cách đăng chính sách mới trong ứng dụng hoặc qua email. Bạn nên xem lại chính sách này định kỳ.
+**Lưu ý:** Thông tin người thuê (bao gồm cả người thuê dưới 18 tuổi) được chủ nhà trọ nhập vào là để tuân thủ quy định pháp luật về quản lý tạm trú, không phải do trẻ em tự cung cấp.
 
-### 10. Liên Hệ
+### 10. Thay Đổi Chính Sách
 
-Nếu bạn có bất kỳ câu hỏi nào về Chính sách bảo mật này, vui lòng liên hệ:
+Chúng tôi có thể cập nhật Chính sách bảo mật này theo thời gian. Mọi thay đổi sẽ được thông báo qua:
+- Email đến các tài khoản quản trị viên
+- Thông báo trong ứng dụng
+- Cập nhật ngày hiệu lực ở đầu tài liệu này
 
-**Email:** [craftzcatdev@gmail.com]  
+Bạn nên xem lại chính sách này định kỳ.
+
+### 11. Liên Hệ
+
+Nếu bạn có bất kỳ câu hỏi nào về Chính sách bảo mật này, muốn yêu cầu xóa tài khoản, hoặc cần hỗ trợ, vui lòng liên hệ:
+
+**Email:** craftzcatdev@gmail.com  
 **Nhà phát triển:** Hai Ng. / craftzcatdev
 
 ---
@@ -97,88 +177,190 @@ Nếu bạn có bất kỳ câu hỏi nào về Chính sách bảo mật này, v
 
 ### 1. Introduction
 
-Trolly is a rental property management app for landlords, developed by Hai Ng. / craftzcatdev. The app helps manage rental rooms, record monthly electricity and water meter readings, calculate utility bills, and share invoices with tenants via Zalo.
+**Trolly is a private, family-only internal tool — NOT a public app.**
 
-This policy describes how we collect, use, and protect your information when you use the Trolly app.
+Trolly is an iOS rental property management app developed by Hai Ng. (craftzcatdev) for internal family use. The app helps manage rental rooms, record monthly electricity and water meter readings, calculate utility bills, scan and store tenant Citizen Identity Card (CCCD) information as required by Vietnamese law, and share invoices with tenants via Zalo.
 
-### 2. Information We Collect
+**This app is NOT open to public registration.** Only the developer's family members (approximately 5 users) are granted access.
 
-#### 2.1 Account Information
-- **Email and password:** When you register an admin account through Firebase Authentication, we store your email address and encrypted password.
-- **User ID (UID):** Firebase automatically generates a unique identifier for your account.
+### 2. Who Can Use This App
 
-#### 2.2 Rental Property Management Data
-You (as the landlord) enter the following information into the app:
-- **Room information:** Room number, rental price, area, room status
-- **Tenant information:** Full name, phone number, lease start date, lease end date
-- **Utility meter readings:** Electricity and water meter readings recorded monthly
-- **Invoices:** Calculated electricity, water, and rent charges by month
+Trolly is a private tool for the developer's family. **There is NO sign-up functionality in the app.**
 
-All this data is stored in Firebase Firestore within the developer's Firebase project.
+- Admin accounts are created manually by the developer in Firebase Console
+- Only family members authorized by the developer can use the app
+- The app does not allow users to self-register or create new accounts
 
-#### 2.3 Device and Security Information
-- **Firebase App Check / App Attest:** To protect the app from unauthorized access, Firebase App Check may collect basic device information (such as temporary device identifiers) to verify that requests come from the legitimate app.
-- **Firebase diagnostic information:** Firebase SDKs may automatically collect basic diagnostic data (such as device type, iOS version, crash information) to maintain and improve the service.
+If you need an account or want to delete an existing account, please contact the developer directly at **craftzcatdev@gmail.com**.
 
-### 3. How We Use Information
+### 3. Information We Collect
 
-We use the collected information to:
-- Authenticate your identity when logging in
-- Store and manage room, tenant, and invoice data
-- Calculate monthly utility bills
-- Protect the app from unauthorized access
-- Maintain and improve app functionality
+#### 3.1 Admin Account Information
+- **Email and password:** Stored via Firebase Authentication (password is encrypted)
+- **User ID (UID):** Unique identifier automatically generated by Firebase
 
-### 4. Information Sharing
+#### 3.2 Room Information
+- Room number, rental price, area, room status
+- Array of tenant IDs currently occupying the room
 
-**We DO NOT share your personal information with any third parties**, except:
-- **Firebase/Google Cloud Platform:** Data is stored on Firebase infrastructure (owned by Google), subject to [Google's Privacy Policy](https://policies.google.com/privacy).
-- **Legal requirements:** If required by law, we may disclose information to authorized authorities.
+#### 3.3 Tenant Information
+Under Vietnamese law (Circular 17/2018/TT-BCA and related regulations), landlords are **legally required to collect and retain identity document information of tenants**. The app collects the following information:
+
+- **Full name** (fullName)
+- **Citizen Identity Card (CCCD) / National ID number** (personalIdentificationNumber)
+- **Date of birth** (dob)
+- **Gender** (sex)
+- **Place of residence** (placeOfResidence)
+- **Place of birth** (placeOfBirth)
+- **Nationality** (nationality)
+- **CCCD issue date** (dateOfIssue)
+- **CCCD expiry date** (dateOfExpiry)
+- **CCCD issuing authority** (placeOfIssue)
+- **Check-in date** (checkInDate)
+- **Deposit amount** (depositAmount)
+- **Record creation/update/deletion timestamps** (createdAt, updatedAt, deletedAt)
+
+**CCCD Scanning Feature:**
+- The app uses camera and/or NFC to scan information from CCCD cards
+- Only text fields are extracted and stored in Firestore
+- **NO CCCD images are stored**
+
+#### 3.4 Monthly Billing Data
+- Electricity meter readings, water meter readings
+- Calculated electricity, water, and rent charges
+- Number of occupants (numberOfPerson)
+
+#### 3.5 Device and Security Information
+- **Firebase App Check / App Attest:** Collects temporary device identifiers to verify requests come from the legitimate app
+- **Firebase SDK diagnostic data:** Device type, iOS version, crash information — automatically collected by Firebase SDK
+- **NO Firebase Analytics, Firebase Crashlytics, or any tracking/advertising SDKs are used**
+
+### 4. How We Use Information
+
+We use the collected information **only** for the following purposes:
+
+1. **Vietnamese legal compliance:** Store tenant CCCD information as required by Circular 17/2018/TT-BCA on temporary residence management
+2. **Property management:** Track vacant/occupied rooms, tenant information, check-in dates, deposits
+3. **Billing calculation:** Record monthly utility meter readings and calculate charges
+4. **User authentication:** Admin account login
+5. **App security:** Prevent unauthorized access through Firebase App Check
+
+**Data is NOT used for:**
+- Advertising
+- User behavior analytics
+- Sharing with third parties (except when legally required)
+- Any purpose other than property management and legal compliance
+
+### 5. Information Sharing
+
+**We DO NOT share personal information with any third parties**, except:
+
+#### 5.1 Firebase / Google Cloud Platform
+- Data is stored on Firebase Firestore (Google's infrastructure)
+- Subject to [Google's Privacy Policy](https://policies.google.com/privacy)
+- Firebase only serves as infrastructure provider — Google does not access or use your tenant data
+
+#### 5.2 Vietnamese Competent Authorities
+- If required by Vietnamese law, we may disclose information to police, local authorities, or other competent authorities
+- This includes providing temporary residence information as requested by regulatory agencies
+
+#### 5.3 Invoice Sharing via Zalo
+- When you actively share invoices with tenants via Zalo, that action is initiated by you
+- Sharing is subject to Zalo's own policies
+- We do not control how Zalo processes data after you share it
 
 **Important notes:**
-- The app **DOES NOT use** any advertising, analytics, or user behavior tracking SDKs.
-- Tenant information (names, phone numbers) that you enter into the app is stored in the developer's Firebase project and is not shared with third parties.
-- When you share invoices via Zalo, that sharing is initiated by you and is subject to Zalo's policies.
+- The app **DOES NOT use** any advertising, analytics, or user behavior tracking SDKs
+- There are no third-party integrations other than Firebase
 
-### 5. Data Security
+### 6. Data Security
 
-We implement reasonable security measures to protect your data:
-- Passwords are encrypted by Firebase Authentication
-- Data is transmitted over encrypted HTTPS connections
-- Firebase App Check helps prevent unauthorized access to the database
-- Firestore security rules are configured to allow only authenticated users to access their data
+We implement reasonable security measures:
 
-However, no method of electronic transmission or storage is 100% secure. We cannot guarantee absolute security.
+- **Transmission encryption:** All data is transmitted over HTTPS
+- **Password encryption:** Firebase Authentication encrypts passwords
+- **Firestore security rules:** Only authenticated users can access data
+- **Firebase App Check:** Prevents unauthorized access from fake apps
+- **No CCCD images stored:** Only extracted text fields are stored
 
-### 6. Your Rights
+However, no method of electronic transmission or storage is 100% secure.
 
-You have the right to:
-- **Access:** View your personal data within the app
-- **Edit:** Update or modify information in the app
-- **Delete:** Remove room, tenant, or invoice data at any time
-- **Delete account:** Contact us to permanently delete your account and all associated data
+### 7. Your Rights
 
-### 7. Data Retention
+#### 7.1 Access and Edit Rights
+- You can view and edit room, tenant, and invoice data in the app at any time
+- You can delete tenant records or invoices within the app
 
-Your data is stored on Firebase Firestore (Google Cloud Platform servers) and will be retained until:
+#### 7.2 Account Deletion (Apple App Store Guideline 5.1.1(v))
+**Because Trolly is a private internal tool for the developer's family, account management is performed manually by the developer.**
+
+- **There is NO self-service account deletion feature in the app**
+- Accounts are created and deleted manually by the developer in Firebase Console
+- If you want to delete your account and all associated data, please contact **craftzcatdev@gmail.com**
+- The developer commits to deleting accounts and data within 30 days of receiving the request
+- Accounts will be automatically deleted when no longer in use or when the app is discontinued
+
+**Why there is no self-service account deletion:**
+- The app has only ~5 users (family members)
+- There is no public registration process
+- Account management is handled directly between the developer and users
+
+### 8. Data Retention
+
+Data is stored on Firebase Firestore (Google Cloud Platform) and will be retained until:
+
 - You actively delete data within the app
-- You request account deletion
+- You request account deletion via email
+- The developer deletes the account when no longer in use
 - The app is discontinued
 
-### 8. Children
+**CCCD information retention period:**
+- Under Vietnamese law, temporary residence information must be retained while the tenant is residing and may be stored longer to serve inspections by competent authorities
+- Data will be deleted when no longer necessary for management purposes or legal compliance
 
-The Trolly app is not intended for individuals under 18 years of age. We do not knowingly collect personal information from children. If you discover that a child has provided personal information to us, please contact us so we can delete that information.
+### 9. Children
 
-### 9. Policy Changes
+The Trolly app is not intended for individuals under 18 years of age. We do not knowingly collect personal information from children under 18 in their role as app users.
 
-We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy in the app or via email. You should review this policy periodically.
+**Note:** Tenant information (including tenants under 18) entered by landlords is for compliance with temporary residence management regulations, not provided by children themselves.
 
-### 10. Contact
+### 10. Policy Changes
 
-If you have any questions about this Privacy Policy, please contact:
+We may update this Privacy Policy from time to time. Any changes will be communicated via:
+- Email to admin accounts
+- In-app notifications
+- Updated effective date at the top of this document
 
-**Email:** craftzcatdev@gmail.com 
+You should review this policy periodically.
+
+### 11. Contact
+
+If you have any questions about this Privacy Policy, want to request account deletion, or need support, please contact:
+
+**Email:** craftzcatdev@gmail.com  
 **Developer:** Hai Ng. / craftzcatdev
+
+---
+
+## App Privacy Nutrition Label (for App Store Connect)
+
+**Data Types Collected:**
+
+- **Contact Info:** Name, Phone Number (tenant data entered by admin)
+- **Sensitive Info:** Government ID Number (CCCD/CMND), Date of Birth, Gender, Place of Residence, Place of Birth, Nationality, ID Issue/Expiry Dates, Issuing Authority
+- **Financial Info:** Rent amount, deposit amount, utility charges
+- **Identifiers:** User ID (Firebase UID), Device ID (App Attest temporary identifier)
+- **Usage Data:** Crash data and diagnostics (Firebase SDK auto-collection)
+
+**Data Use:**
+- App Functionality (property management, legal compliance)
+- Product Personalization (user authentication)
+
+**Data Linked to User:**
+- All tenant data, room data, and billing data are linked to the admin user account
+
+**Third Parties with Access:**
+- Firebase/Google Cloud Platform (infrastructure provider only)
 
 ---
 
