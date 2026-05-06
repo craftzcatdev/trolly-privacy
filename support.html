@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trolly — Hỗ Trợ / Support</title>
+  <style>
+    :root {
+      --accent: #007AFF;
+      --bg: #f5f5f7;
+      --card: #ffffff;
+      --text: #1d1d1f;
+      --muted: #6e6e73;
+      --border: #e0e0e5;
+      --tag-bg: #e8f0fe;
+      --tag-text: #1a56db;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    header {
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    header .logo {
+      width: 36px; height: 36px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-weight: 700; font-size: 16px;
+      flex-shrink: 0;
+    }
+    header h1 { font-size: 17px; font-weight: 600; color: var(--text); }
+    header a {
+      font-size: 13px;
+      color: var(--accent);
+      margin-left: auto;
+      text-decoration: none;
+    }
+    header a:hover { text-decoration: underline; }
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+    .hero {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .hero h2 {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .hero p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+    .lang-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+    .lang-tab {
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      background: none;
+      color: var(--muted);
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .lang-tab.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+    .lang-section { display: none; }
+    .lang-section.active { display: block; }
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .card h3 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .card p { font-size: 15px; color: #3a3a3c; margin-bottom: 10px; }
+    .card p:last-child { margin-bottom: 0; }
+    .card ul {
+      padding-left: 20px;
+      margin: 8px 0;
+    }
+    .card ul li {
+      font-size: 15px;
+      color: #3a3a3c;
+      margin-bottom: 8px;
+    }
+    .card ul li strong { color: var(--text); }
+    .contact-card {
+      background: linear-gradient(135deg, #007AFF11, #007AFF05);
+      border: 1px solid #007AFF33;
+      border-radius: 16px;
+      padding: 36px 32px;
+      text-align: center;
+      margin-top: 16px;
+    }
+    .contact-card h3 {
+      color: var(--accent);
+      font-size: 20px;
+      font-weight: 700;
+      text-transform: none;
+      letter-spacing: 0;
+      margin-bottom: 8px;
+    }
+    .contact-card p { color: var(--muted); font-size: 14px; margin-bottom: 0; }
+    .contact-card .email-btn {
+      display: inline-block;
+      margin-top: 20px;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 980px;
+      font-size: 15px;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+    .contact-card .email-btn:hover { opacity: 0.85; }
+    .response-time {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 16px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 13px;
+      color: #166534;
+      font-weight: 500;
+    }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 13px;
+      color: var(--muted);
+      padding: 0 24px;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    @media (max-width: 600px) {
+      .card { padding: 20px; }
+      .hero h2 { font-size: 26px; }
+      header a { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">T</div>
+  <h1>Trolly</h1>
+  <a href="index.html">Privacy Policy →</a>
+</header>
+
+<div class="container">
+  <div class="hero">
+    <div class="badge">App Support</div>
+    <h2>Hỗ Trợ / Support</h2>
+    <p>Trolly — Rental Property Management · Hai Ng. / craftzcatdev</p>
+  </div>
+
+  <div class="lang-tabs">
+    <button class="lang-tab active" onclick="switchLang('vi', this)">🇻🇳 Tiếng Việt</button>
+    <button class="lang-tab" onclick="switchLang('en', this)">🇬🇧 English</button>
+  </div>
+
+  <!-- ───────── TIẾNG VIỆT ───────── -->
+  <div id="lang-vi" class="lang-section active">
+
+    <div class="card">
+      <h3>Về Ứng Dụng</h3>
+      <p><strong>Trolly</strong> là ứng dụng iOS quản lý nhà trọ dành cho chủ nhà, giúp ghi chỉ số điện nước hàng tháng, tính toán hóa đơn tiện ích, và chia sẻ hóa đơn với người thuê qua Zalo.</p>
+      <p>Đây là công cụ nội bộ — tài khoản được cấp thủ công bởi nhà phát triển, không có chức năng đăng ký trong ứng dụng.</p>
+    </div>
+
+    <div class="card">
+      <h3>Các Vấn Đề Thường Gặp</h3>
+      <ul>
+        <li><strong>Quên mật khẩu:</strong> Sử dụng chức năng "Quên mật khẩu" trên màn hình đăng nhập để nhận email đặt lại mật khẩu.</li>
+        <li><strong>Không đăng nhập được:</strong> Kiểm tra kết nối mạng và đảm bảo bạn sử dụng đúng email/mật khẩu được cấp.</li>
+        <li><strong>Dữ liệu không cập nhật:</strong> Thoát ứng dụng và mở lại để làm mới dữ liệu từ server.</li>
+        <li><strong>Tính toán hóa đơn sai:</strong> Kiểm tra lại đơn giá điện/nước trong phần Cài đặt (Settings) của ứng dụng.</li>
+        <li><strong>Yêu cầu tài khoản mới:</strong> Liên hệ trực tiếp với nhà phát triển qua email bên dưới.</li>
+        <li><strong>Yêu cầu xóa tài khoản:</strong> Gửi email đến nhà phát triển — cam kết xóa trong vòng 30 ngày.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Thông Tin Liên Hệ</h3>
+      <p>Với mọi thắc mắc, báo lỗi, hoặc yêu cầu hỗ trợ, vui lòng liên hệ trực tiếp với nhà phát triển qua email.</p>
+      <p style="color: var(--muted); font-size: 14px;">Thời gian phản hồi thông thường: trong vòng 1–3 ngày làm việc.</p>
+    </div>
+
+  </div>
+  <!-- end lang-vi -->
+
+  <!-- ───────── ENGLISH ───────── -->
+  <div id="lang-en" class="lang-section">
+
+    <div class="card">
+      <h3>About the App</h3>
+      <p><strong>Trolly</strong> is an iOS rental property management app for landlords. It helps record monthly electricity and water meter readings, calculate utility bills, and share invoices with tenants via Zalo.</p>
+      <p>This is an internal tool — accounts are manually provisioned by the developer; there is no in-app sign-up feature.</p>
+    </div>
+
+    <div class="card">
+      <h3>Common Issues</h3>
+      <ul>
+        <li><strong>Forgot password:</strong> Use the "Forgot Password" feature on the login screen to receive a password reset email.</li>
+        <li><strong>Can't log in:</strong> Check your internet connection and make sure you are using the correct email and password.</li>
+        <li><strong>Data not updating:</strong> Force-quit the app and reopen it to refresh data from the server.</li>
+        <li><strong>Incorrect bill calculation:</strong> Verify the electricity/water unit prices in the app's Settings section.</li>
+        <li><strong>Request a new account:</strong> Contact the developer directly via email below.</li>
+        <li><strong>Request account deletion:</strong> Email the developer — deletion guaranteed within 30 days.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Contact Information</h3>
+      <p>For any questions, bug reports, or support requests, please contact the developer directly via email.</p>
+      <p style="color: var(--muted); font-size: 14px;">Typical response time: within 1–3 business days.</p>
+    </div>
+
+  </div>
+  <!-- end lang-en -->
+
+  <div class="contact-card">
+    <h3>Liên Hệ Hỗ Trợ / Contact Support</h3>
+    <p>Questions, bug reports, account requests &amp; deletion</p>
+    <a class="email-btn" href="mailto:craftzcatdev@gmail.com">craftzcatdev@gmail.com</a>
+    <br/>
+    <span class="response-time">⏱ Phản hồi trong 1–3 ngày làm việc / 1–3 business days</span>
+    <p style="margin-top: 16px;">Developer: Hai Ng. / craftzcatdev</p>
+  </div>
+
+  <footer>
+    <p>© 2026 Hai Ng. / craftzcatdev · Trolly</p>
+    <p style="margin-top: 6px;">
+      <a href="index.html">Privacy Policy</a>
+    </p>
+  </footer>
+</div>
+
+<script>
+  function switchLang(lang, btn) {
+    document.querySelectorAll('.lang-section').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.lang-tab').forEach(el => el.classList.remove('active'));
+    document.getElementById('lang-' + lang).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
