@@ -7,125 +7,94 @@
   <meta name="description" content="Chính sách bảo mật của ứng dụng Trolly — ứng dụng iOS quản lý nhà trọ." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://craftzcatdev.github.io/trolly-privacy/privacy" />
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/craftzcatdev/trolly-privacy/main/Icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --accent: #007AFF;
-      --bg: #f5f5f7;
-      --card: #ffffff;
-      --text: #1d1d1f;
-      --muted: #6e6e73;
-      --border: #e0e0e5;
-      --tag-bg: #e8f0fe;
-      --tag-text: #1a56db;
-      --warn-bg: #fff8e1;
-      --warn-border: #f59e0b;
+      --bg: #FDF6E3; --surface: #F5EDD4; --surface2: #EDE4C8;
+      --accent: #B83232; --accent2: #2C4A6E;
+      --text: #2C1A0E; --muted: #7A6652; --border: #C8B89A; --border2: #A89878;
+      --tag-bg: #F0E8D0; --tag-text: #7A3A1A;
+      --warn-bg: #FDF0D8; --warn-border: #C8842A;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      font-size: 16px;
-    }
-    header {
-      background: rgba(255,255,255,0.85);
-      backdrop-filter: saturate(180%) blur(20px);
-      -webkit-backdrop-filter: saturate(180%) blur(20px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 24px;
-      height: 56px;
-      display: flex;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .header-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .logo {
-      width: 32px; height: 32px;
-      background: var(--accent);
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      color: white; font-weight: 700; font-size: 15px;
-      flex-shrink: 0;
-      text-decoration: none;
-    }
-    .brand { font-size: 17px; font-weight: 700; color: var(--text); text-decoration: none; }
-    .nav-links { display: flex; gap: 4px; margin-left: auto; }
-    .nav-links a {
-      font-size: 14px; color: var(--muted); text-decoration: none;
-      padding: 6px 12px; border-radius: 8px;
-      transition: background 0.15s, color 0.15s;
-    }
-    .nav-links a:hover { background: #f0f0f5; color: var(--text); }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Lora', Georgia, serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 16px; }
+    header { background: var(--surface); border-bottom: 2px solid var(--border2); padding: 0 24px; position: sticky; top: 0; z-index: 100; }
+    .header-inner { max-width: 1100px; margin: 0 auto; height: 60px; display: flex; align-items: center; gap: 14px; }
+    .logo { width: 36px; height: 36px; border-radius: 9px; overflow: hidden; flex-shrink: 0; border: 1.5px solid var(--border2); box-shadow: 1px 1px 0 var(--border2); text-decoration: none; }
+    .logo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .brand { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--text); text-decoration: none; }
+    .nav-links { display: flex; gap: 2px; margin-left: auto; }
+    .nav-links a { font-family: 'Lora', serif; font-size: 14px; color: var(--muted); text-decoration: none; padding: 6px 12px; border-radius: 4px; transition: color 0.15s; }
+    .nav-links a:hover { color: var(--text); background: var(--surface2); }
     .nav-links .active { color: var(--accent); font-weight: 500; }
-    .container { max-width: 760px; margin: 0 auto; padding: 40px 24px 80px; }
+    .nav-links .nav-dl { background: var(--accent); color: white !important; border: 1px solid #8B2020; box-shadow: 1px 2px 0 #8B2020; font-weight: 500; }
+    .container { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
     .hero { text-align: center; margin-bottom: 40px; }
-    .hero h2 { font-size: 32px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; }
-    .hero p { color: var(--muted); font-size: 15px; }
-    .badge { display: inline-block; background: var(--tag-bg); color: var(--tag-text); font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 20px; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.4px; }
-    .lang-tabs { display: flex; gap: 8px; margin-bottom: 32px; border-bottom: 1px solid var(--border); padding-bottom: 0; }
-    .lang-tab { padding: 8px 16px; font-size: 14px; font-weight: 500; cursor: pointer; border: none; background: none; color: var(--muted); border-bottom: 2px solid transparent; margin-bottom: -1px; transition: color 0.2s, border-color 0.2s; }
+    .hero-ornament { font-size: 12px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; margin-bottom: 14px; }
+    .hero-icon { width: 64px; height: 64px; border-radius: 14px; overflow: hidden; margin: 0 auto 20px; border: 1.5px solid var(--border2); box-shadow: 2px 2px 0 var(--border2); }
+    .hero-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .hero h2 { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 700; letter-spacing: -0.3px; margin-bottom: 8px; line-height: 1.2; }
+    .hero p { color: var(--muted); font-size: 14px; font-style: italic; }
+    .hero-rule { display: flex; align-items: center; gap: 12px; margin: 16px auto; max-width: 300px; }
+    .hero-rule span { font-size: 14px; color: var(--accent); flex-shrink: 0; }
+    .hero-rule hr { flex: 1; border: none; border-top: 1px solid var(--border); }
+    .badge { display: inline-block; background: var(--tag-bg); color: var(--tag-text); font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 2px; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 1px; border: 1px solid var(--border); }
+    .lang-tabs { display: flex; gap: 0; margin-bottom: 32px; border-bottom: 2px solid var(--border2); }
+    .lang-tab { padding: 10px 20px; font-family: 'Lora', serif; font-size: 14px; font-weight: 500; cursor: pointer; border: none; background: none; color: var(--muted); border-bottom: 2px solid transparent; margin-bottom: -2px; transition: color 0.2s, border-color 0.2s; }
     .lang-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
     .lang-section { display: none; }
     .lang-section.active { display: block; }
-    .card { background: var(--card); border-radius: 16px; padding: 28px 32px; margin-bottom: 16px; border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
-    .card h3 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.6px; color: var(--accent); font-weight: 600; margin-bottom: 12px; }
-    .card h4 { font-size: 15px; font-weight: 600; color: var(--text); margin: 20px 0 8px; }
+    .card { background: var(--surface); border-radius: 4px; padding: 28px 30px; margin-bottom: 14px; border: 1.5px solid var(--border); box-shadow: 2px 2px 0 var(--border); }
+    .card h3 { font-family: 'Playfair Display', serif; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); font-weight: 600; margin-bottom: 14px; }
+    .card h4 { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700; color: var(--text); margin: 20px 0 8px; }
     .card h4:first-child { margin-top: 0; }
-    .card p { font-size: 15px; color: #3a3a3c; margin-bottom: 10px; }
+    .card p { font-size: 14px; color: var(--text); margin-bottom: 10px; line-height: 1.75; }
     .card p:last-child { margin-bottom: 0; }
     .card ul { padding-left: 20px; margin: 8px 0; }
-    .card ul li { font-size: 15px; color: #3a3a3c; margin-bottom: 6px; }
-    .card ul li strong { color: var(--text); }
+    .card ul li { font-size: 14px; color: var(--text); margin-bottom: 6px; line-height: 1.7; }
     .card ol { padding-left: 20px; margin: 8px 0; }
-    .card ol li { font-size: 15px; color: #3a3a3c; margin-bottom: 6px; }
-    .notice { background: var(--warn-bg); border-left: 3px solid var(--warn-border); border-radius: 8px; padding: 14px 16px; margin: 12px 0; font-size: 14px; color: #78350f; }
-    .notice strong { color: #92400e; }
-    .no-share { background: #f0fdf4; border-left: 3px solid #22c55e; border-radius: 8px; padding: 14px 16px; margin: 12px 0; font-size: 14px; color: #166534; }
-    .contact-card { background: linear-gradient(135deg, #007AFF11, #007AFF05); border: 1px solid #007AFF33; border-radius: 16px; padding: 28px 32px; text-align: center; margin-top: 16px; }
-    .contact-card h3 { color: var(--accent); font-size: 18px; text-transform: none; letter-spacing: 0; margin-bottom: 8px; }
-    .contact-card a { display: inline-block; margin-top: 12px; background: var(--accent); color: white; text-decoration: none; padding: 10px 24px; border-radius: 980px; font-size: 15px; font-weight: 500; }
-    .contact-card p { color: var(--muted); font-size: 14px; }
-    footer { text-align: center; margin-top: 40px; font-size: 13px; color: var(--muted); padding: 0 24px; }
+    .card ol li { font-size: 14px; color: var(--text); margin-bottom: 6px; }
+    .notice { background: var(--warn-bg); border-left: 3px solid var(--warn-border); border-radius: 2px; padding: 14px 16px; margin: 12px 0; font-size: 13px; color: #6B3A10; font-style: italic; }
+    .no-share { background: #F0F8EE; border-left: 3px solid #5A9A4A; border-radius: 2px; padding: 14px 16px; margin: 12px 0; font-size: 13px; color: #2A5A20; }
+    .contact-card { background: var(--accent2); border-radius: 4px; padding: 36px 32px; text-align: center; margin-top: 16px; border: 1.5px solid #1E3A5A; box-shadow: 3px 3px 0 #1E3A5A; }
+    .contact-card h3 { font-family: 'Playfair Display', serif; color: var(--bg); font-size: 20px; font-weight: 700; text-transform: none; letter-spacing: 0; margin-bottom: 8px; }
+    .contact-card p { color: #B8C8D8; font-size: 14px; font-style: italic; }
+    .contact-card a { display: inline-block; margin-top: 16px; background: var(--bg); color: var(--accent2); text-decoration: none; padding: 10px 28px; border-radius: 4px; font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700; box-shadow: 2px 2px 0 #1E3A5A; }
+    footer { text-align: center; margin-top: 48px; font-size: 13px; color: var(--muted); font-style: italic; }
     footer a { color: var(--accent); text-decoration: none; }
-    code { background: #f0f0f5; padding: 2px 6px; border-radius: 4px; font-size: 13px; font-family: "SF Mono", monospace; }
-    @media (max-width: 600px) { .card { padding: 20px; } .hero h2 { font-size: 26px; } .nav-links a:not(:last-child) { display: none; } }
+    footer a:hover { text-decoration: underline; }
+    code { background: var(--surface2); padding: 2px 6px; border-radius: 2px; font-size: 12px; font-family: 'Courier New', monospace; border: 1px solid var(--border); }
+    @media (max-width: 600px) { .card { padding: 20px; } .hero h2 { font-size: 24px; } .nav-links a:not(.nav-dl) { display: none; } }
   </style>
 </head>
 <body>
 <header>
   <div class="header-inner">
-    <a class="logo" href="/trolly-privacy/">T</a>
+    <a class="logo" href="/trolly-privacy/"><img src="https://raw.githubusercontent.com/craftzcatdev/trolly-privacy/main/Icon.png" alt="Trolly" /></a>
     <a class="brand" href="/trolly-privacy/">Trolly</a>
     <div class="nav-links">
       <a class="active" href="/trolly-privacy/privacy">Bảo mật</a>
       <a href="/trolly-privacy/support">Hỗ trợ</a>
-      <a href="https://apps.apple.com/us/app/trolly/id6766149272" target="_blank" rel="noopener" style="background:var(--accent);color:white;padding:6px 14px;border-radius:8px;font-weight:500;">Tải về</a>
+      <a class="nav-dl" href="https://apps.apple.com/us/app/trolly/id6766149272" target="_blank" rel="noopener">Tải về</a>
     </div>
   </div>
 </header>
-
 <div class="container">
   <div class="hero">
-    <div class="badge">Private &amp; Unlisted App</div>
+    <div class="hero-icon"><img src="https://raw.githubusercontent.com/craftzcatdev/trolly-privacy/main/Icon.png" alt="Trolly" /></div>
+    <div class="badge">Privacy Policy</div>
     <h2>Chính Sách Bảo Mật<br/>Privacy Policy</h2>
+    <div class="hero-rule"><hr/><span>✦</span><hr/></div>
     <p>Trolly — Rental Property Management · Hai Ng. / craftzcatdev</p>
+    <p style="margin-top:6px; font-size:12px;">Effective Date: 04 May 2026</p>
   </div>
-
   <div class="lang-tabs">
-    <button class="lang-tab active" onclick="switchLang('vi', this)">🇻🇳 Tiếng Việt</button>
-    <button class="lang-tab" onclick="switchLang('en', this)">🇬🇧 English</button>
+    <button class="lang-tab active" onclick="switchLang('vi',this)">🇻🇳 Tiếng Việt</button>
+    <button class="lang-tab" onclick="switchLang('en',this)">🇬🇧 English</button>
   </div>
-
   <div id="lang-vi" class="lang-section active">
     <div class="card"><h3>1. Giới Thiệu</h3><p><strong>Trolly là công cụ nội bộ riêng tư dành cho nhóm chủ nhà trọ — KHÔNG phải ứng dụng công cộng.</strong></p><p>Trolly là ứng dụng iOS quản lý nhà trọ được phát triển bởi Hai Ng. (craftzcatdev). Ứng dụng giúp quản lý phòng cho thuê, ghi chỉ số điện nước hàng tháng, tính toán hóa đơn tiện ích, quét và lưu trữ thông tin Căn cước công dân (CCCD) của người thuê theo quy định pháp luật Việt Nam, và chia sẻ hóa đơn với người thuê qua Zalo.</p><div class="notice"><strong>Lưu ý:</strong> Ứng dụng này KHÔNG mở cho công chúng đăng ký. Chỉ những người dùng được quản trị viên cấp phép mới có thể sử dụng.</div></div>
     <div class="card"><h3>2. Ai Có Thể Sử Dụng</h3><p>Trolly là công cụ nội bộ. <strong>KHÔNG có chức năng đăng ký tài khoản trong ứng dụng.</strong></p><ul><li>Tài khoản quản trị viên được tạo thủ công trong Firebase Console</li><li>Chỉ người dùng được cấp quyền mới có thể sử dụng</li><li>Ứng dụng không cho phép tự đăng ký hoặc tạo tài khoản mới</li></ul><p>Nếu bạn cần tài khoản hoặc muốn xóa tài khoản, liên hệ <strong>craftzcatdev@gmail.com</strong>.</p></div>
@@ -138,31 +107,28 @@
     <div class="card"><h3>9. Trẻ Em</h3><p>Trolly không dành cho người dưới 18 tuổi trong vai trò người dùng. Thông tin người thuê dưới 18 tuổi được chủ nhà nhập vì mục đích tuân thủ pháp luật.</p></div>
     <div class="card"><h3>10. Thay Đổi Chính Sách</h3><p>Mọi thay đổi sẽ được thông báo qua email và cập nhật ngày hiệu lực ở đầu tài liệu này.</p></div>
   </div>
-
   <div id="lang-en" class="lang-section">
     <div class="card"><h3>1. Introduction</h3><p><strong>Trolly is a private internal tool for a specific group of landlords — NOT a public app.</strong></p><p>Trolly is an iOS rental property management app developed by Hai Ng. (craftzcatdev). It helps manage rental rooms, record monthly utility readings, calculate bills, scan and store tenant CCCD information as required by Vietnamese law, and share invoices via Zalo.</p><div class="notice"><strong>Note:</strong> This app is NOT open to public registration. Only users authorized by the administrator can use it.</div></div>
     <div class="card"><h3>2. Who Can Use This App</h3><p>Trolly is an internal tool. <strong>There is NO sign-up functionality in the app.</strong></p><ul><li>Admin accounts are created manually in Firebase Console</li><li>Only authorized users can access the app</li><li>Users cannot self-register or create new accounts</li></ul><p>For account requests or deletion, contact <strong>craftzcatdev@gmail.com</strong>.</p></div>
-    <div class="card"><h3>3. Information We Collect</h3><h4>3.1 Admin Account</h4><ul><li><strong>Email and password:</strong> Stored via Firebase Authentication (encrypted)</li><li><strong>UID:</strong> Auto-generated by Firebase</li></ul><h4>3.2 Room Information</h4><ul><li>Room number, rental price, area, status, tenant ID list</li></ul><h4>3.3 Tenant Information (CCCD)</h4><p>Vietnamese law (Circular 17/2018/TT-BCA) legally requires landlords to collect tenant identity documents.</p><ul><li>Full name, CCCD/National ID number</li><li>Date of birth, Gender, Nationality</li><li>Place of residence, Place of birth</li><li>CCCD issue/expiry date, issuing authority</li><li>Check-in date, Deposit amount</li></ul><div class="notice"><strong>CCCD Scanning:</strong> Camera and/or NFC. Only text extracted — <strong>NO images stored.</strong></div><h4>3.4 Monthly Billing</h4><ul><li>Electricity/water meter readings, calculated charges, occupant count</li></ul><h4>3.5 Device & Security</h4><ul><li>Firebase App Check / App Attest: temporary device token</li><li>Firebase SDK: device type, iOS version (automatic)</li><li>NO Analytics, Crashlytics, or ad SDKs</li></ul></div>
+    <div class="card"><h3>3. Information We Collect</h3><h4>3.1 Admin Account</h4><ul><li><strong>Email and password:</strong> Stored via Firebase Authentication (encrypted)</li><li><strong>UID:</strong> Auto-generated by Firebase</li></ul><h4>3.2 Room Information</h4><ul><li>Room number, rental price, area, status, tenant ID list</li></ul><h4>3.3 Tenant Information (CCCD)</h4><p>Vietnamese law (Circular 17/2018/TT-BCA) legally requires landlords to collect tenant identity documents.</p><ul><li>Full name, CCCD/National ID number</li><li>Date of birth, Gender, Nationality</li><li>Place of residence, Place of birth</li><li>CCCD issue/expiry date, issuing authority</li><li>Check-in date, Deposit amount</li></ul><div class="notice"><strong>CCCD Scanning:</strong> Camera and/or NFC. Only text extracted — <strong>NO images stored.</strong></div><h4>3.4 Monthly Billing</h4><ul><li>Electricity/water readings, calculated charges, occupant count</li></ul><h4>3.5 Device & Security</h4><ul><li>Firebase App Check / App Attest: temporary device token</li><li>Firebase SDK: device type, iOS version (automatic)</li><li>NO Analytics, Crashlytics, or ad SDKs</li></ul></div>
     <div class="card"><h3>4. How We Use Information</h3><ol><li><strong>Legal compliance:</strong> Store CCCD per Circular 17/2018/TT-BCA</li><li><strong>Property management:</strong> Track rooms, tenants, deposits</li><li><strong>Billing:</strong> Monthly utility and rent calculation</li><li><strong>Authentication:</strong> Admin login</li><li><strong>Security:</strong> Firebase App Check</li></ol><div class="no-share">Data is NOT used for advertising, analytics, or third-party sharing.</div></div>
-    <div class="card"><h3>5. Information Sharing</h3><div class="no-share"><strong>We DO NOT share personal information with third parties</strong>, except as below.</div><h4>5.1 Firebase / Google Cloud</h4><p>Stored on Firestore (Google infrastructure). Subject to <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a>.</p><h4>5.2 Vietnamese Authorities</h4><p>May be disclosed if required by Vietnamese law.</p><h4>5.3 Invoice Sharing via Zalo</h4><p>Initiated by you and subject to Zalo's policies.</p></div>
-    <div class="card"><h3>6. Data Security</h3><ul><li>All data transmitted over <strong>HTTPS</strong></li><li>Passwords encrypted by Firebase Authentication</li><li>Firestore Security Rules: authenticated access only</li><li>Firebase App Check prevents unauthorized app access</li><li>No CCCD images stored</li></ul></div>
+    <div class="card"><h3>5. Information Sharing</h3><div class="no-share"><strong>We DO NOT share personal information with third parties</strong>, except as below.</div><h4>5.1 Firebase / Google Cloud</h4><p>Stored on Firestore. Subject to <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a>.</p><h4>5.2 Vietnamese Authorities</h4><p>May be disclosed if required by Vietnamese law.</p><h4>5.3 Invoice Sharing via Zalo</h4><p>Initiated by you and subject to Zalo's policies.</p></div>
+    <div class="card"><h3>6. Data Security</h3><ul><li>All data transmitted over <strong>HTTPS</strong></li><li>Passwords encrypted by Firebase Authentication</li><li>Firestore Security Rules: authenticated access only</li><li>Firebase App Check prevents unauthorized access</li><li>No CCCD images stored</li></ul></div>
     <div class="card"><h3>7. Your Rights & Account Deletion</h3><h4>7.1 Access and Edit</h4><ul><li>View/edit room, tenant, and invoice data anytime in the app</li><li>Delete tenant records or invoices within the app</li></ul><h4>7.2 Account Deletion (Apple Guideline 5.1.1(v))</h4><div class="notice"><strong>No self-service deletion in-app.</strong> Email <strong>craftzcatdev@gmail.com</strong> — deletion within <strong>30 days</strong>.</div></div>
     <div class="card"><h3>8. Data Retention</h3><p>Data stored on Firebase Firestore until deleted by you, account deletion requested, or app discontinued.</p></div>
     <div class="card"><h3>9. Children</h3><p>Not intended for users under 18. Minor tenant data is entered by landlords for legal compliance only.</p></div>
     <div class="card"><h3>10. Policy Changes</h3><p>Changes communicated via email and by updating the effective date above.</p></div>
   </div>
-
   <div class="contact-card">
     <h3>Contact / Liên Hệ</h3>
     <p>Questions, account deletion requests, or support</p>
     <a href="mailto:craftzcatdev@gmail.com">craftzcatdev@gmail.com</a>
-    <p style="margin-top: 12px;">Developer: Hai Ng. / craftzcatdev</p>
+    <p style="margin-top:12px;">Developer: Hai Ng. / craftzcatdev</p>
   </div>
-
   <footer>
     <p>© 2026 Hai Ng. / craftzcatdev · Trolly</p>
-    <p style="margin-top: 6px;"><a href="/trolly-privacy/">← Trang chủ</a> · <a href="/trolly-privacy/support">Hỗ trợ</a></p>
-    <p style="margin-top: 4px;">In case of discrepancy, the Vietnamese version shall prevail. · Effective Date: 04 May 2026</p>
+    <p style="margin-top:8px;"><a href="/trolly-privacy/">← Trang chủ</a> &nbsp;·&nbsp; <a href="/trolly-privacy/support">Hỗ trợ</a></p>
+    <p style="margin-top:6px;">In case of discrepancy, the Vietnamese version shall prevail. · Effective Date: 04 May 2026</p>
   </footer>
 </div>
 <script>
