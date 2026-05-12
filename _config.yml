@@ -1,3 +1,4 @@
 exclude:
   - index.md
   - PRIVACY_POLICY.md
+  - sitemap.xml
