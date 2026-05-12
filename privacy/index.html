@@ -60,6 +60,8 @@
     .card ol li { font-size: 14px; color: var(--text); margin-bottom: 6px; }
     .notice { background: var(--warn-bg); border-left: 3px solid var(--warn-border); border-radius: 2px; padding: 14px 16px; margin: 12px 0; font-size: 13px; color: #6B3A10; font-style: italic; }
     .no-share { background: #F0F8EE; border-left: 3px solid #5A9A4A; border-radius: 2px; padding: 14px 16px; margin: 12px 0; font-size: 13px; color: #2A5A20; }
+    .legal-ref { background: #F7F2E8; border-left: 3px solid var(--border2); border-radius: 2px; padding: 14px 16px; margin: 12px 0; font-size: 13px; color: var(--muted); }
+    .legal-ref strong { color: var(--text); }
     .contact-card { background: var(--accent2); border-radius: 4px; padding: 36px 32px; text-align: center; margin-top: 16px; border: 1.5px solid #1E3A5A; box-shadow: 3px 3px 0 #1E3A5A; }
     .contact-card h3 { font-family: 'Playfair Display', serif; color: var(--bg); font-size: 20px; font-weight: 700; text-transform: none; letter-spacing: 0; margin-bottom: 8px; }
     .contact-card p { color: #B8C8D8; font-size: 14px; font-style: italic; }
@@ -90,46 +92,290 @@
     <h2>Chính Sách Bảo Mật<br/>Privacy Policy</h2>
     <div class="hero-rule"><hr/><span>✦</span><hr/></div>
     <p>Trolly — Rental Property Management · Hai Ng. / craftzcatdev</p>
-    <p style="margin-top:6px; font-size:12px;">Effective Date: 04 May 2026</p>
+    <p style="margin-top:6px; font-size:12px;">Effective Date: 12 May 2026</p>
   </div>
   <div class="lang-tabs">
     <button class="lang-tab active" onclick="switchLang('vi',this)">🇻🇳 Tiếng Việt</button>
     <button class="lang-tab" onclick="switchLang('en',this)">🇬🇧 English</button>
   </div>
+
+  <!-- ══════════════════════════════════════════ TIẾNG VIỆT ══ -->
   <div id="lang-vi" class="lang-section active">
-    <div class="card"><h3>1. Giới Thiệu</h3><p><strong>Trolly là công cụ nội bộ riêng tư dành cho nhóm chủ nhà trọ — KHÔNG phải ứng dụng công cộng.</strong></p><p>Trolly là ứng dụng iOS quản lý nhà trọ được phát triển bởi Hai Ng. (craftzcatdev). Ứng dụng giúp quản lý phòng cho thuê, ghi chỉ số điện nước hàng tháng, tính toán hóa đơn tiện ích, quét và lưu trữ thông tin Căn cước công dân (CCCD) của người thuê theo quy định pháp luật Việt Nam, và chia sẻ hóa đơn với người thuê qua Zalo.</p><div class="notice"><strong>Lưu ý:</strong> Ứng dụng này KHÔNG mở cho công chúng đăng ký. Chỉ những người dùng được quản trị viên cấp phép mới có thể sử dụng.</div></div>
-    <div class="card"><h3>2. Ai Có Thể Sử Dụng</h3><p>Trolly là công cụ nội bộ. <strong>KHÔNG có chức năng đăng ký tài khoản trong ứng dụng.</strong></p><ul><li>Tài khoản quản trị viên được tạo thủ công trong Firebase Console</li><li>Chỉ người dùng được cấp quyền mới có thể sử dụng</li><li>Ứng dụng không cho phép tự đăng ký hoặc tạo tài khoản mới</li></ul><p>Nếu bạn cần tài khoản hoặc muốn xóa tài khoản, liên hệ <strong>craftzcatdev@gmail.com</strong>.</p></div>
-    <div class="card"><h3>3. Thông Tin Thu Thập</h3><h4>3.1 Tài Khoản Quản Trị Viên</h4><ul><li><strong>Email và mật khẩu:</strong> Lưu qua Firebase Authentication (mật khẩu được mã hóa)</li><li><strong>User ID (UID):</strong> Mã định danh do Firebase tạo tự động</li></ul><h4>3.2 Thông Tin Phòng Trọ</h4><ul><li>Số phòng, giá thuê, diện tích, trạng thái phòng</li><li>Danh sách ID người thuê đang ở</li></ul><h4>3.3 Thông Tin Người Thuê (CCCD)</h4><p>Theo quy định pháp luật Việt Nam (Thông tư 17/2018/TT-BCA), chủ nhà trọ <strong>bắt buộc phải thu thập và lưu giữ thông tin giấy tờ tùy thân của người thuê.</strong></p><ul><li><strong>Họ và tên, Số CCCD / CMND</strong></li><li><strong>Ngày sinh, Giới tính, Quốc tịch</strong></li><li><strong>Nơi thường trú, Nơi sinh</strong></li><li><strong>Ngày cấp, Ngày hết hạn, Nơi cấp CCCD</strong></li><li><strong>Ngày nhận phòng, Số tiền đặt cọc</strong></li></ul><div class="notice"><strong>Quét CCCD:</strong> Dùng camera và/hoặc NFC. Chỉ lưu văn bản — <strong>KHÔNG lưu hình ảnh CCCD.</strong></div><h4>3.4 Dữ Liệu Hóa Đơn</h4><ul><li>Chỉ số điện, nước hàng tháng</li><li>Tính toán tiền điện, nước, tiền phòng, số người ở</li></ul><h4>3.5 Thiết Bị & Bảo Mật</h4><ul><li><strong>Firebase App Check / App Attest:</strong> Mã thiết bị tạm thời</li><li><strong>Firebase SDK:</strong> Loại thiết bị, phiên bản iOS (tự động)</li><li>KHÔNG dùng Firebase Analytics, Crashlytics, SDK quảng cáo</li></ul></div>
-    <div class="card"><h3>4. Mục Đích Sử Dụng</h3><ol><li><strong>Tuân thủ pháp luật Việt Nam:</strong> Lưu CCCD theo Thông tư 17/2018/TT-BCA</li><li><strong>Quản lý nhà trọ:</strong> Theo dõi phòng, người thuê, đặt cọc</li><li><strong>Tính toán hóa đơn:</strong> Điện, nước, tiền phòng hàng tháng</li><li><strong>Xác thực người dùng:</strong> Đăng nhập tài khoản admin</li><li><strong>Bảo mật:</strong> Ngăn truy cập trái phép qua Firebase App Check</li></ol><div class="no-share">Dữ liệu KHÔNG được dùng cho quảng cáo, phân tích hành vi, hoặc chia sẻ với bên thứ ba.</div></div>
-    <div class="card"><h3>5. Chia Sẻ Thông Tin</h3><div class="no-share"><strong>KHÔNG chia sẻ thông tin cá nhân với bất kỳ bên thứ ba nào</strong>, ngoại trừ bên dưới.</div><h4>5.1 Firebase / Google Cloud</h4><p>Lưu trữ trên Firestore (hạ tầng Google). Tuân theo <a href="https://policies.google.com/privacy" target="_blank">Chính sách Google</a>. Google không truy cập dữ liệu người thuê.</p><h4>5.2 Cơ Quan Có Thẩm Quyền</h4><p>Nếu pháp luật Việt Nam yêu cầu, có thể cung cấp cho cơ quan công an hoặc chính quyền địa phương.</p><h4>5.3 Chia Sẻ Hóa Đơn Qua Zalo</h4><p>Khi bạn chủ động chia sẻ, hành động đó do bạn khởi tạo và tuân theo chính sách của Zalo.</p></div>
-    <div class="card"><h3>6. Bảo Mật Dữ Liệu</h3><ul><li>Truyền tải qua <strong>HTTPS</strong></li><li>Mật khẩu mã hóa bởi <strong>Firebase Authentication</strong></li><li>Firestore Security Rules: chỉ người dùng xác thực mới truy cập được</li><li><strong>Firebase App Check</strong> ngăn truy cập từ app giả mạo</li><li>Không lưu hình ảnh CCCD</li></ul></div>
-    <div class="card"><h3>7. Quyền Của Bạn & Xóa Tài Khoản</h3><h4>7.1 Truy Cập và Chỉnh Sửa</h4><ul><li>Xem và chỉnh sửa dữ liệu phòng, người thuê, hóa đơn trong app</li><li>Xóa bản ghi người thuê hoặc hóa đơn trực tiếp trong app</li></ul><h4>7.2 Xóa Tài Khoản (Apple Guideline 5.1.1(v))</h4><div class="notice"><strong>Không có chức năng tự xóa tài khoản trong app.</strong> Để yêu cầu xóa, liên hệ <strong>craftzcatdev@gmail.com</strong> — cam kết xóa trong <strong>30 ngày</strong>.</div></div>
-    <div class="card"><h3>8. Lưu Trữ Dữ Liệu</h3><p>Dữ liệu lưu trên Firebase Firestore cho đến khi bạn xóa trong app, yêu cầu xóa tài khoản qua email, hoặc ứng dụng ngừng hoạt động.</p></div>
-    <div class="card"><h3>9. Trẻ Em</h3><p>Trolly không dành cho người dưới 18 tuổi trong vai trò người dùng. Thông tin người thuê dưới 18 tuổi được chủ nhà nhập vì mục đích tuân thủ pháp luật.</p></div>
-    <div class="card"><h3>10. Thay Đổi Chính Sách</h3><p>Mọi thay đổi sẽ được thông báo qua email và cập nhật ngày hiệu lực ở đầu tài liệu này.</p></div>
+
+    <div class="card">
+      <h3>1. Giới Thiệu</h3>
+      <p><strong>Trolly là công cụ nội bộ riêng tư dành cho nhóm chủ nhà trọ — KHÔNG phải ứng dụng công cộng.</strong></p>
+      <p>Trolly là ứng dụng iOS quản lý nhà trọ được phát triển bởi Hai Ng. (craftzcatdev). Ứng dụng giúp quản lý phòng cho thuê, ghi chỉ số điện nước hàng tháng, tính toán hóa đơn tiện ích, quét và lưu trữ thông tin Căn cước công dân (CCCD) của người thuê theo quy định pháp luật Việt Nam, và chia sẻ hóa đơn với người thuê qua Zalo.</p>
+      <div class="notice"><strong>Lưu ý:</strong> Ứng dụng này KHÔNG mở cho công chúng đăng ký. Chỉ những người dùng được quản trị viên cấp phép mới có thể sử dụng.</div>
+    </div>
+
+    <div class="card">
+      <h3>2. Ai Có Thể Sử Dụng</h3>
+      <p>Trolly là công cụ nội bộ. <strong>KHÔNG có chức năng đăng ký tài khoản trong ứng dụng.</strong></p>
+      <ul>
+        <li>Tài khoản quản trị viên được tạo thủ công trong Firebase Console</li>
+        <li>Chỉ người dùng được cấp quyền mới có thể sử dụng</li>
+        <li>Ứng dụng không cho phép tự đăng ký hoặc tạo tài khoản mới</li>
+      </ul>
+      <p>Nếu bạn cần tài khoản hoặc muốn xóa tài khoản, liên hệ <strong>craftzcatdev@gmail.com</strong>.</p>
+    </div>
+
+    <div class="card">
+      <h3>3. Thông Tin Thu Thập</h3>
+
+      <h4>3.1 Tài Khoản Quản Trị Viên</h4>
+      <ul>
+        <li><strong>Email và mật khẩu:</strong> Lưu qua Firebase Authentication (mật khẩu được mã hóa)</li>
+        <li><strong>User ID (UID):</strong> Mã định danh do Firebase tạo tự động</li>
+      </ul>
+
+      <h4>3.2 Thông Tin Phòng Trọ</h4>
+      <ul>
+        <li>Số phòng, giá thuê, diện tích, trạng thái phòng</li>
+        <li>Danh sách ID người thuê đang ở</li>
+      </ul>
+
+      <h4>3.3 Thông Tin Người Thuê (CCCD)</h4>
+      <p>Theo quy định pháp luật Việt Nam, chủ nhà trọ có nghĩa vụ thông báo lưu trú và hỗ trợ người thuê đăng ký tạm trú, đồng thời lưu giữ thông tin giấy tờ tùy thân của người thuê phục vụ công tác quản lý cư trú.</p>
+      <div class="legal-ref">
+        <strong>Căn cứ pháp lý:</strong><br/>
+        • <strong>Luật Cư trú 2020</strong> (số 68/2020/QH14), Điều 27: nghĩa vụ đăng ký tạm trú và thông báo lưu trú<br/>
+        • <strong>Thông tư 17/2024/TT-BCA</strong>: hướng dẫn thi hành Luật Căn cước 2023 — quy định về thẻ Căn cước công dân (CCCD), thông tin định danh<br/>
+        • <strong>Nghị định 144/2021/NĐ-CP</strong>, Điều 9: xử phạt vi phạm quy định về đăng ký, quản lý cư trú
+      </div>
+      <ul>
+        <li><strong>Họ và tên, Số CCCD / CMND</strong></li>
+        <li><strong>Ngày sinh, Giới tính, Quốc tịch</strong></li>
+        <li><strong>Nơi thường trú, Nơi sinh</strong></li>
+        <li><strong>Ngày cấp, Ngày hết hạn, Nơi cấp CCCD</strong></li>
+        <li><strong>Ngày nhận phòng, Số tiền đặt cọc</strong></li>
+      </ul>
+      <div class="notice"><strong>Quét CCCD:</strong> Dùng camera và/hoặc NFC. Chỉ lưu văn bản — <strong>KHÔNG lưu hình ảnh CCCD.</strong></div>
+
+      <h4>3.4 Dữ Liệu Hóa Đơn</h4>
+      <ul>
+        <li>Chỉ số điện, nước hàng tháng</li>
+        <li>Tính toán tiền điện, nước, tiền phòng, số người ở</li>
+      </ul>
+
+      <h4>3.5 Thiết Bị & Bảo Mật</h4>
+      <ul>
+        <li><strong>Firebase App Check / App Attest:</strong> Mã thiết bị tạm thời</li>
+        <li><strong>Firebase SDK:</strong> Loại thiết bị, phiên bản iOS (tự động)</li>
+        <li>KHÔNG dùng Firebase Analytics, Crashlytics, SDK quảng cáo</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>4. Mục Đích Sử Dụng</h3>
+      <ol>
+        <li><strong>Tuân thủ pháp luật Việt Nam:</strong> Lưu thông tin định danh người thuê theo Luật Cư trú 2020 và Thông tư 17/2024/TT-BCA (Luật Căn cước 2023)</li>
+        <li><strong>Quản lý nhà trọ:</strong> Theo dõi phòng, người thuê, đặt cọc</li>
+        <li><strong>Tính toán hóa đơn:</strong> Điện, nước, tiền phòng hàng tháng</li>
+        <li><strong>Xác thực người dùng:</strong> Đăng nhập tài khoản admin</li>
+        <li><strong>Bảo mật:</strong> Ngăn truy cập trái phép qua Firebase App Check</li>
+      </ol>
+      <div class="no-share">Dữ liệu KHÔNG được dùng cho quảng cáo, phân tích hành vi, hoặc chia sẻ với bên thứ ba.</div>
+    </div>
+
+    <div class="card">
+      <h3>5. Chia Sẻ Thông Tin</h3>
+      <div class="no-share"><strong>KHÔNG chia sẻ thông tin cá nhân với bất kỳ bên thứ ba nào</strong>, ngoại trừ bên dưới.</div>
+
+      <h4>5.1 Firebase / Google Cloud</h4>
+      <p>Lưu trữ trên Firestore (hạ tầng Google). Tuân theo <a href="https://policies.google.com/privacy" target="_blank">Chính sách Google</a>. Google không truy cập dữ liệu người thuê.</p>
+
+      <h4>5.2 Cơ Quan Có Thẩm Quyền</h4>
+      <p>Nếu pháp luật Việt Nam yêu cầu (ví dụ: cơ quan công an kiểm tra quản lý cư trú theo Luật Cư trú 2020), có thể cung cấp thông tin cho cơ quan có thẩm quyền.</p>
+
+      <h4>5.3 Chia Sẻ Hóa Đơn Qua Zalo</h4>
+      <p>Khi bạn chủ động chia sẻ hóa đơn, hành động đó do bạn khởi tạo và tuân theo chính sách của Zalo.</p>
+    </div>
+
+    <div class="card">
+      <h3>6. Bảo Mật Dữ Liệu</h3>
+      <ul>
+        <li>Truyền tải qua <strong>HTTPS</strong></li>
+        <li>Mật khẩu mã hóa bởi <strong>Firebase Authentication</strong></li>
+        <li>Firestore Security Rules: chỉ người dùng xác thực mới truy cập được</li>
+        <li><strong>Firebase App Check</strong> ngăn truy cập từ app giả mạo</li>
+        <li>Không lưu hình ảnh CCCD — chỉ lưu văn bản trích xuất</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>7. Quyền Của Bạn & Xóa Tài Khoản</h3>
+
+      <h4>7.1 Truy Cập và Chỉnh Sửa</h4>
+      <ul>
+        <li>Xem và chỉnh sửa dữ liệu phòng, người thuê, hóa đơn trong app</li>
+        <li>Xóa bản ghi người thuê hoặc hóa đơn trực tiếp trong app</li>
+      </ul>
+
+      <h4>7.2 Xóa Tài Khoản (Apple Guideline 5.1.1(v))</h4>
+      <div class="notice"><strong>Không có chức năng tự xóa tài khoản trong app.</strong> Để yêu cầu xóa, liên hệ <strong>craftzcatdev@gmail.com</strong> — cam kết xóa trong <strong>30 ngày</strong>.</div>
+    </div>
+
+    <div class="card">
+      <h3>8. Lưu Trữ Dữ Liệu</h3>
+      <p>Dữ liệu lưu trên Firebase Firestore cho đến khi bạn xóa trong app, yêu cầu xóa tài khoản qua email, hoặc ứng dụng ngừng hoạt động.</p>
+    </div>
+
+    <div class="card">
+      <h3>9. Trẻ Em</h3>
+      <p>Trolly không dành cho người dưới 18 tuổi trong vai trò người dùng (chủ nhà trọ). Thông tin người thuê dưới 18 tuổi có thể được chủ nhà nhập vì mục đích tuân thủ pháp luật về quản lý cư trú.</p>
+    </div>
+
+    <div class="card">
+      <h3>10. Thay Đổi Chính Sách</h3>
+      <p>Mọi thay đổi sẽ được thông báo qua email và cập nhật ngày hiệu lực ở đầu tài liệu này.</p>
+    </div>
+
   </div>
+
+  <!-- ══════════════════════════════════════════ ENGLISH ══ -->
   <div id="lang-en" class="lang-section">
-    <div class="card"><h3>1. Introduction</h3><p><strong>Trolly is a private internal tool for a specific group of landlords — NOT a public app.</strong></p><p>Trolly is an iOS rental property management app developed by Hai Ng. (craftzcatdev). It helps manage rental rooms, record monthly utility readings, calculate bills, scan and store tenant CCCD information as required by Vietnamese law, and share invoices via Zalo.</p><div class="notice"><strong>Note:</strong> This app is NOT open to public registration. Only users authorized by the administrator can use it.</div></div>
-    <div class="card"><h3>2. Who Can Use This App</h3><p>Trolly is an internal tool. <strong>There is NO sign-up functionality in the app.</strong></p><ul><li>Admin accounts are created manually in Firebase Console</li><li>Only authorized users can access the app</li><li>Users cannot self-register or create new accounts</li></ul><p>For account requests or deletion, contact <strong>craftzcatdev@gmail.com</strong>.</p></div>
-    <div class="card"><h3>3. Information We Collect</h3><h4>3.1 Admin Account</h4><ul><li><strong>Email and password:</strong> Stored via Firebase Authentication (encrypted)</li><li><strong>UID:</strong> Auto-generated by Firebase</li></ul><h4>3.2 Room Information</h4><ul><li>Room number, rental price, area, status, tenant ID list</li></ul><h4>3.3 Tenant Information (CCCD)</h4><p>Vietnamese law (Circular 17/2018/TT-BCA) legally requires landlords to collect tenant identity documents.</p><ul><li>Full name, CCCD/National ID number</li><li>Date of birth, Gender, Nationality</li><li>Place of residence, Place of birth</li><li>CCCD issue/expiry date, issuing authority</li><li>Check-in date, Deposit amount</li></ul><div class="notice"><strong>CCCD Scanning:</strong> Camera and/or NFC. Only text extracted — <strong>NO images stored.</strong></div><h4>3.4 Monthly Billing</h4><ul><li>Electricity/water readings, calculated charges, occupant count</li></ul><h4>3.5 Device & Security</h4><ul><li>Firebase App Check / App Attest: temporary device token</li><li>Firebase SDK: device type, iOS version (automatic)</li><li>NO Analytics, Crashlytics, or ad SDKs</li></ul></div>
-    <div class="card"><h3>4. How We Use Information</h3><ol><li><strong>Legal compliance:</strong> Store CCCD per Circular 17/2018/TT-BCA</li><li><strong>Property management:</strong> Track rooms, tenants, deposits</li><li><strong>Billing:</strong> Monthly utility and rent calculation</li><li><strong>Authentication:</strong> Admin login</li><li><strong>Security:</strong> Firebase App Check</li></ol><div class="no-share">Data is NOT used for advertising, analytics, or third-party sharing.</div></div>
-    <div class="card"><h3>5. Information Sharing</h3><div class="no-share"><strong>We DO NOT share personal information with third parties</strong>, except as below.</div><h4>5.1 Firebase / Google Cloud</h4><p>Stored on Firestore. Subject to <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a>.</p><h4>5.2 Vietnamese Authorities</h4><p>May be disclosed if required by Vietnamese law.</p><h4>5.3 Invoice Sharing via Zalo</h4><p>Initiated by you and subject to Zalo's policies.</p></div>
-    <div class="card"><h3>6. Data Security</h3><ul><li>All data transmitted over <strong>HTTPS</strong></li><li>Passwords encrypted by Firebase Authentication</li><li>Firestore Security Rules: authenticated access only</li><li>Firebase App Check prevents unauthorized access</li><li>No CCCD images stored</li></ul></div>
-    <div class="card"><h3>7. Your Rights & Account Deletion</h3><h4>7.1 Access and Edit</h4><ul><li>View/edit room, tenant, and invoice data anytime in the app</li><li>Delete tenant records or invoices within the app</li></ul><h4>7.2 Account Deletion (Apple Guideline 5.1.1(v))</h4><div class="notice"><strong>No self-service deletion in-app.</strong> Email <strong>craftzcatdev@gmail.com</strong> — deletion within <strong>30 days</strong>.</div></div>
-    <div class="card"><h3>8. Data Retention</h3><p>Data stored on Firebase Firestore until deleted by you, account deletion requested, or app discontinued.</p></div>
-    <div class="card"><h3>9. Children</h3><p>Not intended for users under 18. Minor tenant data is entered by landlords for legal compliance only.</p></div>
-    <div class="card"><h3>10. Policy Changes</h3><p>Changes communicated via email and by updating the effective date above.</p></div>
+
+    <div class="card">
+      <h3>1. Introduction</h3>
+      <p><strong>Trolly is a private internal tool for a specific group of landlords — NOT a public app.</strong></p>
+      <p>Trolly is an iOS rental property management app developed by Hai Ng. (craftzcatdev). It helps manage rental rooms, record monthly utility readings, calculate bills, scan and store tenant identity (CCCD) information as required by Vietnamese law, and share invoices via Zalo.</p>
+      <div class="notice"><strong>Note:</strong> This app is NOT open to public registration. Only users authorized by the administrator can use it.</div>
+    </div>
+
+    <div class="card">
+      <h3>2. Who Can Use This App</h3>
+      <p>Trolly is an internal tool. <strong>There is NO sign-up functionality in the app.</strong></p>
+      <ul>
+        <li>Admin accounts are created manually in Firebase Console</li>
+        <li>Only authorized users can access the app</li>
+        <li>Users cannot self-register or create new accounts</li>
+      </ul>
+      <p>For account requests or deletion, contact <strong>craftzcatdev@gmail.com</strong>.</p>
+    </div>
+
+    <div class="card">
+      <h3>3. Information We Collect</h3>
+
+      <h4>3.1 Admin Account</h4>
+      <ul>
+        <li><strong>Email and password:</strong> Stored via Firebase Authentication (encrypted)</li>
+        <li><strong>UID:</strong> Auto-generated by Firebase</li>
+      </ul>
+
+      <h4>3.2 Room Information</h4>
+      <ul>
+        <li>Room number, rental price, area, status, tenant ID list</li>
+      </ul>
+
+      <h4>3.3 Tenant Information (CCCD)</h4>
+      <p>Under Vietnamese law, landlords have an obligation to support tenant residence registration and to retain tenant identity information for residence management purposes.</p>
+      <div class="legal-ref">
+        <strong>Legal basis:</strong><br/>
+        • <strong>Law on Residence 2020</strong> (No. 68/2020/QH14), Article 27: obligations regarding temporary residence registration and lodging notification<br/>
+        • <strong>Circular 17/2024/TT-BCA</strong>: implementing the Law on Citizen Identity Cards 2023 — governing CCCD card information and identity data<br/>
+        • <strong>Decree 144/2021/NĐ-CP</strong>, Article 9: administrative penalties for violations of residence registration and management regulations
+      </div>
+      <ul>
+        <li>Full name, CCCD/National ID number</li>
+        <li>Date of birth, Gender, Nationality</li>
+        <li>Place of permanent residence, Place of birth</li>
+        <li>CCCD issue date, expiry date, issuing authority</li>
+        <li>Check-in date, Deposit amount</li>
+      </ul>
+      <div class="notice"><strong>CCCD Scanning:</strong> Camera and/or NFC. Only text is extracted — <strong>NO images are stored.</strong></div>
+
+      <h4>3.4 Monthly Billing</h4>
+      <ul>
+        <li>Electricity/water meter readings, calculated charges, occupant count</li>
+      </ul>
+
+      <h4>3.5 Device &amp; Security</h4>
+      <ul>
+        <li>Firebase App Check / App Attest: temporary device token</li>
+        <li>Firebase SDK: device type, iOS version (automatic)</li>
+        <li>NO Analytics, Crashlytics, or advertising SDKs</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>4. How We Use Information</h3>
+      <ol>
+        <li><strong>Legal compliance:</strong> Retain tenant identity data per Law on Residence 2020 and Circular 17/2024/TT-BCA (Law on Citizen Identity Cards 2023)</li>
+        <li><strong>Property management:</strong> Track rooms, tenants, deposits</li>
+        <li><strong>Billing:</strong> Monthly utility and rent calculation</li>
+        <li><strong>Authentication:</strong> Admin login</li>
+        <li><strong>Security:</strong> Firebase App Check prevents unauthorized access</li>
+      </ol>
+      <div class="no-share">Data is NOT used for advertising, behavioral analytics, or third-party sharing.</div>
+    </div>
+
+    <div class="card">
+      <h3>5. Information Sharing</h3>
+      <div class="no-share"><strong>We DO NOT share personal information with third parties</strong>, except as outlined below.</div>
+
+      <h4>5.1 Firebase / Google Cloud</h4>
+      <p>Data is stored on Firestore (Google infrastructure). Subject to <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>. Google does not access tenant data.</p>
+
+      <h4>5.2 Vietnamese Authorities</h4>
+      <p>Information may be disclosed if required by Vietnamese law (e.g., police inspection under the Law on Residence 2020).</p>
+
+      <h4>5.3 Invoice Sharing via Zalo</h4>
+      <p>Initiated by you and subject to Zalo's own policies.</p>
+    </div>
+
+    <div class="card">
+      <h3>6. Data Security</h3>
+      <ul>
+        <li>All data transmitted over <strong>HTTPS</strong></li>
+        <li>Passwords encrypted by Firebase Authentication</li>
+        <li>Firestore Security Rules: authenticated access only</li>
+        <li>Firebase App Check prevents access from unauthorized apps</li>
+        <li>No CCCD images stored — text only</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>7. Your Rights &amp; Account Deletion</h3>
+
+      <h4>7.1 Access and Edit</h4>
+      <ul>
+        <li>View and edit room, tenant, and invoice data anytime in the app</li>
+        <li>Delete tenant records or invoices directly within the app</li>
+      </ul>
+
+      <h4>7.2 Account Deletion (Apple Guideline 5.1.1(v))</h4>
+      <div class="notice"><strong>No self-service account deletion in-app.</strong> Email <strong>craftzcatdev@gmail.com</strong> — deletion within <strong>30 days</strong>.</div>
+    </div>
+
+    <div class="card">
+      <h3>8. Data Retention</h3>
+      <p>Data is stored on Firebase Firestore until deleted by you in-app, account deletion is requested via email, or the app is discontinued.</p>
+    </div>
+
+    <div class="card">
+      <h3>9. Children</h3>
+      <p>Not intended for users under 18 in the role of landlord. Minor tenant data may be entered by landlords solely for legal residence management compliance.</p>
+    </div>
+
+    <div class="card">
+      <h3>10. Policy Changes</h3>
+      <p>Changes will be communicated via email and by updating the effective date at the top of this document.</p>
+    </div>
+
   </div>
+
   <div class="contact-card">
     <h3>Contact / Liên Hệ</h3>
     <p>Questions, account deletion requests, or support</p>
     <a href="mailto:craftzcatdev@gmail.com">craftzcatdev@gmail.com</a>
     <p style="margin-top:12px;">Developer: Hai Ng. / craftzcatdev</p>
   </div>
+
   <footer>
     <p>© 2026 Hai Ng. / craftzcatdev · Trolly</p>
     <p style="margin-top:8px;"><a href="/trolly-privacy/">← Trang chủ</a> &nbsp;·&nbsp; <a href="/trolly-privacy/support">Hỗ trợ</a></p>
-    <p style="margin-top:6px;">In case of discrepancy, the Vietnamese version shall prevail. · Effective Date: 04 May 2026</p>
+    <p style="margin-top:6px;">In case of discrepancy, the Vietnamese version shall prevail. · Effective Date: 12 May 2026</p>
   </footer>
 </div>
 <script>
