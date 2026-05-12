@@ -9,6 +9,7 @@
   <meta name="author" content="Hai Nguyen / craftzcatdev" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://craftzcatdev.github.io/trolly-privacy/" />
+  <meta name="google-site-verification" content="kSo_lugU92f40ez1YIa6hFwgiqqdC3wW3Mb9ikqgXRo" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://craftzcatdev.github.io/trolly-privacy/" />
   <meta property="og:title" content="Trolly — Ứng dụng quản lý nhà trọ cho chủ nhà" />
@@ -57,7 +58,6 @@
       line-height: 1.7;
       font-size: 16px;
     }
-    /* subtle paper texture */
     body::before {
       content: '';
       position: fixed;
@@ -66,8 +66,6 @@
       z-index: 0;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
     }
-
-    /* ── NAV ── */
     nav {
       background: var(--surface);
       border-bottom: 2px solid var(--border2);
@@ -130,8 +128,6 @@
       box-shadow: 0px 1px 0 #8B2020 !important;
       background: #A02828 !important;
     }
-
-    /* ── HERO ── */
     .hero {
       padding: 72px 24px 64px;
       text-align: center;
@@ -164,10 +160,7 @@
       color: var(--text);
       margin-bottom: 18px;
     }
-    .hero h1 em {
-      font-style: italic;
-      color: var(--accent);
-    }
+    .hero h1 em { font-style: italic; color: var(--accent); }
     .hero-rule {
       display: flex;
       align-items: center;
@@ -188,223 +181,71 @@
     }
     .hero-cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
     .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--text);
-      color: var(--bg);
-      text-decoration: none;
-      padding: 13px 28px;
-      border-radius: 4px;
-      font-family: 'Lora', serif;
-      font-size: 15px;
-      font-weight: 500;
-      border: 1.5px solid var(--text);
-      box-shadow: 3px 3px 0 var(--border2);
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--text); color: var(--bg); text-decoration: none;
+      padding: 13px 28px; border-radius: 4px;
+      font-family: 'Lora', serif; font-size: 15px; font-weight: 500;
+      border: 1.5px solid var(--text); box-shadow: 3px 3px 0 var(--border2);
       transition: transform 0.1s, box-shadow 0.1s;
     }
     .btn-primary:hover { transform: translate(1px, 1px); box-shadow: 2px 2px 0 var(--border2); }
     .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: transparent;
-      color: var(--text);
-      text-decoration: none;
-      padding: 13px 28px;
-      border-radius: 4px;
-      font-family: 'Lora', serif;
-      font-size: 15px;
-      border: 1.5px solid var(--border2);
-      box-shadow: 3px 3px 0 var(--surface2);
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: var(--text); text-decoration: none;
+      padding: 13px 28px; border-radius: 4px;
+      font-family: 'Lora', serif; font-size: 15px;
+      border: 1.5px solid var(--border2); box-shadow: 3px 3px 0 var(--surface2);
       transition: transform 0.1s, box-shadow 0.1s;
     }
     .btn-secondary:hover { transform: translate(1px, 1px); box-shadow: 2px 2px 0 var(--surface2); }
     .hero-note { margin-top: 18px; font-size: 13px; color: var(--muted); font-style: italic; }
-
-    /* ── SECTION ── */
-    .section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 72px 24px;
-    }
+    .section { max-width: 1100px; margin: 0 auto; padding: 72px 24px; }
     .section-header { text-align: center; margin-bottom: 52px; }
-    .section-label {
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 2.5px;
-      color: var(--accent);
-      margin-bottom: 10px;
-    }
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(26px, 4vw, 38px);
-      font-weight: 700;
-      letter-spacing: -0.3px;
-      color: var(--text);
-      margin-bottom: 10px;
-    }
-    .section-sub {
-      font-size: 15px;
-      color: var(--muted);
-      font-style: italic;
-      max-width: 480px;
-      margin: 0 auto;
-    }
-    .ornament-divider {
-      text-align: center;
-      color: var(--border2);
-      font-size: 14px;
-      letter-spacing: 8px;
-      margin: 8px 0 0;
-    }
-
-    /* ── FEATURES GRID ── */
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-    }
+    .section-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2.5px; color: var(--accent); margin-bottom: 10px; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.3px; color: var(--text); margin-bottom: 10px; }
+    .section-sub { font-size: 15px; color: var(--muted); font-style: italic; max-width: 480px; margin: 0 auto; }
+    .ornament-divider { text-align: center; color: var(--border2); font-size: 14px; letter-spacing: 8px; margin: 8px 0 0; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
     .feature-card {
-      background: var(--surface);
-      border-radius: 4px;
-      padding: 28px 24px;
-      border: 1.5px solid var(--border);
-      box-shadow: 3px 3px 0 var(--border);
+      background: var(--surface); border-radius: 4px; padding: 28px 24px;
+      border: 1.5px solid var(--border); box-shadow: 3px 3px 0 var(--border);
       transition: transform 0.15s, box-shadow 0.15s;
     }
     .feature-card:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--border2); }
-    .feature-icon {
-      font-size: 26px;
-      margin-bottom: 14px;
-      line-height: 1;
-    }
-    .feature-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 17px;
-      font-weight: 700;
-      margin-bottom: 8px;
-      color: var(--text);
-    }
-    .feature-card p {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    /* ── STEPS ── */
-    .steps-bg {
-      background: var(--surface);
-      border-top: 2px solid var(--border);
-      border-bottom: 2px solid var(--border);
-    }
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 40px;
-    }
-    .step-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px;
-      font-weight: 900;
-      color: var(--surface2);
-      line-height: 1;
-      margin-bottom: 10px;
-    }
-    .step h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 16px;
-      font-weight: 700;
-      margin-bottom: 6px;
-      color: var(--text);
-    }
+    .feature-icon { font-size: 26px; margin-bottom: 14px; line-height: 1; }
+    .feature-card h3 { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; margin-bottom: 8px; color: var(--text); }
+    .feature-card p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+    .steps-bg { background: var(--surface); border-top: 2px solid var(--border); border-bottom: 2px solid var(--border); }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+    .step-num { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 900; color: var(--surface2); line-height: 1; margin-bottom: 10px; }
+    .step h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
     .step p { font-size: 14px; color: var(--muted); line-height: 1.7; }
-    .step-divider {
-      display: none;
-      font-size: 20px;
-      color: var(--border);
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* ── CTA ── */
     .cta-section {
-      background: var(--accent2);
-      padding: 72px 24px;
-      text-align: center;
-      border-top: 2px solid #1E3A5A;
-      border-bottom: 2px solid #1E3A5A;
-      position: relative;
+      background: var(--accent2); padding: 72px 24px; text-align: center;
+      border-top: 2px solid #1E3A5A; border-bottom: 2px solid #1E3A5A;
     }
     .cta-inner { max-width: 520px; margin: 0 auto; }
-    .cta-section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(26px, 4vw, 40px);
-      font-weight: 900;
-      color: var(--bg);
-      letter-spacing: -0.5px;
-      margin-bottom: 12px;
-    }
-    .cta-section p {
-      font-size: 15px;
-      color: #B8C8D8;
-      font-style: italic;
-      margin-bottom: 28px;
-    }
+    .cta-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(26px, 4vw, 40px); font-weight: 900; color: var(--bg); letter-spacing: -0.5px; margin-bottom: 12px; }
+    .cta-section p { font-size: 15px; color: #B8C8D8; font-style: italic; margin-bottom: 28px; }
     .btn-light {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--bg);
-      color: var(--accent2);
-      text-decoration: none;
-      padding: 14px 32px;
-      border-radius: 4px;
-      font-family: 'Playfair Display', serif;
-      font-size: 16px;
-      font-weight: 700;
-      border: 2px solid var(--bg);
-      box-shadow: 4px 4px 0 #1E3A5A;
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--bg); color: var(--accent2); text-decoration: none;
+      padding: 14px 32px; border-radius: 4px;
+      font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700;
+      border: 2px solid var(--bg); box-shadow: 4px 4px 0 #1E3A5A;
       transition: transform 0.1s, box-shadow 0.1s;
     }
     .btn-light:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 #1E3A5A; }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--surface);
-      border-top: 2px solid var(--border2);
-      padding: 40px 24px;
-    }
-    .footer-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      align-items: center;
-      justify-content: space-between;
-    }
+    footer { background: var(--surface); border-top: 2px solid var(--border2); padding: 40px 24px; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between; }
     .footer-brand { display: flex; align-items: center; gap: 10px; }
-    .footer-icon {
-      width: 32px; height: 32px;
-      border-radius: 8px;
-      overflow: hidden;
-      border: 1px solid var(--border2);
-    }
+    .footer-icon { width: 32px; height: 32px; border-radius: 8px; overflow: hidden; border: 1px solid var(--border2); }
     .footer-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .footer-brand span {
-      font-family: 'Playfair Display', serif;
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--text);
-    }
+    .footer-brand span { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--text); }
     .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
     .footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; }
     .footer-links a:hover { color: var(--text); text-decoration: underline; }
     .footer-copy { width: 100%; font-size: 12px; color: var(--muted); font-style: italic; margin-top: 4px; }
-
-    /* ── RESPONSIVE ── */
     @media (max-width: 640px) {
       .nav-links a:not(.nav-download) { display: none; }
       .hero { padding: 52px 20px 48px; }
@@ -414,8 +255,6 @@
   </style>
 </head>
 <body>
-
-<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" href="/trolly-privacy/" aria-label="Trolly Home">
@@ -429,8 +268,6 @@
     </div>
   </div>
 </nav>
-
-<!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
     <p class="hero-ornament">✦ &nbsp; iOS App &nbsp; ✦ &nbsp; Miễn phí &nbsp; ✦</p>
@@ -450,8 +287,6 @@
     <p class="hero-note">🔒 Ứng dụng nội bộ — tài khoản được cấp bởi quản trị viên</p>
   </div>
 </section>
-
-<!-- FEATURES -->
 <section class="section" id="features">
   <div class="section-header">
     <p class="section-label">Tính năng</p>
@@ -460,40 +295,14 @@
     <p class="ornament-divider">— ✦ —</p>
   </div>
   <div class="features-grid">
-    <div class="feature-card">
-      <div class="feature-icon">⚡</div>
-      <h3>Ghi chỉ số điện nước</h3>
-      <p>Nhập chỉ số đầu và cuối kỳ, ứng dụng tự động tính tiêu thụ và ra số tiền chính xác theo đơn giá bạn cài đặt.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🧾</div>
-      <h3>Tính hóa đơn tự động</h3>
-      <p>Tiền điện, nước, rác, tiền thuê phòng — tổng hợp đầy đủ trong một hóa đơn rõ ràng, không cần tính tay.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">💬</div>
-      <h3>Chia sẻ qua Zalo</h3>
-      <p>Xuất hóa đơn thành ảnh đẹp và chia sẻ trực tiếp cho người thuê qua Zalo chỉ với một thao tác.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🏠</div>
-      <h3>Quản lý phòng & người thuê</h3>
-      <p>Theo dõi danh sách phòng, thông tin người thuê, ngày nhận phòng và tiền đặt cọc trong một nơi.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🪪</div>
-      <h3>Quét CCCD tự động</h3>
-      <p>Quét thẻ Căn cước công dân qua camera hoặc NFC, thông tin tự điền — đúng quy định pháp luật Việt Nam.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">☁️</div>
-      <h3>Đồng bộ đám mây</h3>
-      <p>Dữ liệu được lưu trữ an toàn trên Firebase, đồng bộ ngay lập tức trên mọi thiết bị được cấp phép.</p>
-    </div>
+    <div class="feature-card"><div class="feature-icon">⚡</div><h3>Ghi chỉ số điện nước</h3><p>Nhập chỉ số đầu và cuối kỳ, ứng dụng tự động tính tiêu thụ và ra số tiền chính xác theo đơn giá bạn cài đặt.</p></div>
+    <div class="feature-card"><div class="feature-icon">🧾</div><h3>Tính hóa đơn tự động</h3><p>Tiền điện, nước, rác, tiền thuê phòng — tổng hợp đầy đủ trong một hóa đơn rõ ràng, không cần tính tay.</p></div>
+    <div class="feature-card"><div class="feature-icon">💬</div><h3>Chia sẻ qua Zalo</h3><p>Xuất hóa đơn thành ảnh đẹp và chia sẻ trực tiếp cho người thuê qua Zalo chỉ với một thao tác.</p></div>
+    <div class="feature-card"><div class="feature-icon">🏠</div><h3>Quản lý phòng & người thuê</h3><p>Theo dõi danh sách phòng, thông tin người thuê, ngày nhận phòng và tiền đặt cọc trong một nơi.</p></div>
+    <div class="feature-card"><div class="feature-icon">🪪</div><h3>Quét CCCD tự động</h3><p>Quét thẻ Căn cước công dân qua camera hoặc NFC, thông tin tự điền — đúng quy định pháp luật Việt Nam.</p></div>
+    <div class="feature-card"><div class="feature-icon">☁️</div><h3>Đồng bộ đám mây</h3><p>Dữ liệu được lưu trữ an toàn trên Firebase, đồng bộ ngay lập tức trên mọi thiết bị được cấp phép.</p></div>
   </div>
 </section>
-
-<!-- HOW IT WORKS -->
 <div class="steps-bg">
   <div class="section">
     <div class="section-header">
@@ -503,31 +312,13 @@
       <p class="ornament-divider">— ✦ —</p>
     </div>
     <div class="steps">
-      <div class="step">
-        <div class="step-num">01</div>
-        <h3>Mở ứng dụng</h3>
-        <p>Đăng nhập bằng tài khoản được cấp. Chọn tháng cần lập hóa đơn.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">02</div>
-        <h3>Ghi chỉ số</h3>
-        <p>Nhập chỉ số điện và nước cho từng phòng. Tính toán xảy ra tự động.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <h3>Kiểm tra hóa đơn</h3>
-        <p>Xem lại chi tiết hóa đơn từng phòng — tiền điện, nước, rác, thuê phòng.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">04</div>
-        <h3>Gửi qua Zalo</h3>
-        <p>Chia sẻ ảnh hóa đơn đến người thuê chỉ trong một chạm.</p>
-      </div>
+      <div class="step"><div class="step-num">01</div><h3>Mở ứng dụng</h3><p>Đăng nhập bằng tài khoản được cấp. Chọn tháng cần lập hóa đơn.</p></div>
+      <div class="step"><div class="step-num">02</div><h3>Ghi chỉ số</h3><p>Nhập chỉ số điện và nước cho từng phòng. Tính toán xảy ra tự động.</p></div>
+      <div class="step"><div class="step-num">03</div><h3>Kiểm tra hóa đơn</h3><p>Xem lại chi tiết hóa đơn từng phòng — tiền điện, nước, rác, thuê phòng.</p></div>
+      <div class="step"><div class="step-num">04</div><h3>Gửi qua Zalo</h3><p>Chia sẻ ảnh hóa đơn đến người thuê chỉ trong một chạm.</p></div>
     </div>
   </div>
 </div>
-
-<!-- CTA -->
 <section class="cta-section">
   <div class="cta-inner">
     <h2>Bắt đầu ngay hôm nay</h2>
@@ -538,14 +329,10 @@
     </a>
   </div>
 </section>
-
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <div class="footer-icon">
-        <img src="https://raw.githubusercontent.com/craftzcatdev/trolly-privacy/main/Icon.png" alt="Trolly" />
-      </div>
+      <div class="footer-icon"><img src="https://raw.githubusercontent.com/craftzcatdev/trolly-privacy/main/Icon.png" alt="Trolly" /></div>
       <span>Trolly</span>
     </div>
     <div class="footer-links">
@@ -556,6 +343,5 @@
     <p class="footer-copy">© 2026 Hai Nguyen / craftzcatdev · Trolly is an unlisted iOS app for authorized landlords.</p>
   </div>
 </footer>
-
 </body>
 </html>
