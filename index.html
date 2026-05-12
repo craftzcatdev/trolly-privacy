@@ -66,6 +66,8 @@
       z-index: 0;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
     }
+
+    /* ── NAV ── */
     nav {
       background: var(--surface);
       border-bottom: 2px solid var(--border2);
@@ -89,6 +91,7 @@
       flex-shrink: 0;
       border: 1.5px solid var(--border2);
       box-shadow: 1px 1px 0 var(--border2);
+      text-decoration: none;
     }
     .nav-logo img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .nav-brand {
@@ -113,6 +116,7 @@
       padding: 6px 12px;
       border-radius: 4px;
       transition: color 0.15s, background 0.15s;
+      white-space: nowrap;
     }
     .nav-links a:hover { color: var(--text); background: var(--surface2); }
     .nav-download {
@@ -128,6 +132,15 @@
       box-shadow: 0px 1px 0 #8B2020 !important;
       background: #A02828 !important;
     }
+    /* Mobile: show all nav items, shrink padding */
+    @media (max-width: 480px) {
+      nav { padding: 0 12px; }
+      .nav-brand { font-size: 17px; }
+      .nav-links { gap: 1px; }
+      .nav-links a { font-size: 12px; padding: 5px 8px; }
+    }
+
+    /* ── HERO ── */
     .hero {
       padding: 72px 24px 64px;
       text-align: center;
@@ -158,14 +171,19 @@
       letter-spacing: -1px;
       line-height: 1.08;
       color: var(--text);
-      margin-bottom: 18px;
+      margin-bottom: 8px;  /* reduced — gap controlled by em block */
     }
-    .hero h1 em { font-style: italic; color: var(--accent); }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--accent);
+      display: block;       /* force onto new line */
+      margin-top: 6px;      /* small breathing room */
+    }
     .hero-rule {
       display: flex;
       align-items: center;
       gap: 12px;
-      margin: 20px auto;
+      margin: 24px auto;
       max-width: 340px;
       color: var(--border2);
     }
@@ -199,12 +217,16 @@
     }
     .btn-secondary:hover { transform: translate(1px, 1px); box-shadow: 2px 2px 0 var(--surface2); }
     .hero-note { margin-top: 18px; font-size: 13px; color: var(--muted); font-style: italic; }
+
+    /* ── SECTION ── */
     .section { max-width: 1100px; margin: 0 auto; padding: 72px 24px; }
     .section-header { text-align: center; margin-bottom: 52px; }
     .section-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2.5px; color: var(--accent); margin-bottom: 10px; }
     .section-title { font-family: 'Playfair Display', serif; font-size: clamp(26px, 4vw, 38px); font-weight: 700; letter-spacing: -0.3px; color: var(--text); margin-bottom: 10px; }
     .section-sub { font-size: 15px; color: var(--muted); font-style: italic; max-width: 480px; margin: 0 auto; }
     .ornament-divider { text-align: center; color: var(--border2); font-size: 14px; letter-spacing: 8px; margin: 8px 0 0; }
+
+    /* ── FEATURES GRID ── */
     .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
     .feature-card {
       background: var(--surface); border-radius: 4px; padding: 28px 24px;
@@ -215,11 +237,23 @@
     .feature-icon { font-size: 26px; margin-bottom: 14px; line-height: 1; }
     .feature-card h3 { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; margin-bottom: 8px; color: var(--text); }
     .feature-card p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+    /* ── STEPS ── */
     .steps-bg { background: var(--surface); border-top: 2px solid var(--border); border-bottom: 2px solid var(--border); }
     .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
-    .step-num { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 900; color: var(--surface2); line-height: 1; margin-bottom: 10px; }
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      font-weight: 900;
+      /* FIX: was too light, now clearly visible */
+      color: var(--border2);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
     .step h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
     .step p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+    /* ── CTA ── */
     .cta-section {
       background: var(--accent2); padding: 72px 24px; text-align: center;
       border-top: 2px solid #1E3A5A; border-bottom: 2px solid #1E3A5A;
@@ -236,6 +270,82 @@
       transition: transform 0.1s, box-shadow 0.1s;
     }
     .btn-light:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 #1E3A5A; }
+
+    /* ── HIRE SECTION ── */
+    .hire-section {
+      background: var(--bg);
+      border-top: 2px solid var(--border);
+      padding: 72px 24px;
+    }
+    .hire-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .hire-badge {
+      display: inline-block;
+      background: var(--surface2);
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding: 4px 14px;
+      border-radius: 2px;
+      border: 1px solid var(--border);
+      margin-bottom: 20px;
+    }
+    .hire-inner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      color: var(--text);
+      margin-bottom: 14px;
+      line-height: 1.2;
+    }
+    .hire-inner h2 em { font-style: italic; color: var(--accent); }
+    .hire-rule { display: flex; align-items: center; gap: 12px; margin: 16px auto 20px; max-width: 260px; }
+    .hire-rule span { font-size: 14px; color: var(--accent); flex-shrink: 0; }
+    .hire-rule hr { flex: 1; border: none; border-top: 1px solid var(--border); }
+    .hire-inner p {
+      font-size: 15px;
+      color: var(--muted);
+      font-style: italic;
+      line-height: 1.75;
+      margin-bottom: 12px;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hire-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin: 20px 0 28px;
+    }
+    .hire-tag {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: 2px;
+      padding: 6px 14px;
+      font-size: 13px;
+      color: var(--text);
+      font-family: 'Lora', serif;
+    }
+    .btn-hire {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--accent2); color: var(--bg); text-decoration: none;
+      padding: 14px 32px; border-radius: 4px;
+      font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700;
+      border: 2px solid #1E3A5A; box-shadow: 4px 4px 0 #1E3A5A;
+      transition: transform 0.1s, box-shadow 0.1s;
+    }
+    .btn-hire:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 #1E3A5A; }
+    .hire-note { margin-top: 14px; font-size: 12px; color: var(--muted); font-style: italic; }
+
+    /* ── FOOTER ── */
     footer { background: var(--surface); border-top: 2px solid var(--border2); padding: 40px 24px; }
     .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between; }
     .footer-brand { display: flex; align-items: center; gap: 10px; }
@@ -246,15 +356,19 @@
     .footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; }
     .footer-links a:hover { color: var(--text); text-decoration: underline; }
     .footer-copy { width: 100%; font-size: 12px; color: var(--muted); font-style: italic; margin-top: 4px; }
+
+    /* ── RESPONSIVE ── */
     @media (max-width: 640px) {
-      .nav-links a:not(.nav-download) { display: none; }
       .hero { padding: 52px 20px 48px; }
       .btn-primary, .btn-secondary { padding: 12px 22px; font-size: 14px; }
       .section { padding: 52px 20px; }
+      .hire-section { padding: 52px 20px; }
     }
   </style>
 </head>
 <body>
+
+<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" href="/trolly-privacy/" aria-label="Trolly Home">
@@ -268,13 +382,15 @@
     </div>
   </div>
 </nav>
+
+<!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
     <p class="hero-ornament">✦ &nbsp; iOS App &nbsp; ✦ &nbsp; Miễn phí &nbsp; ✦</p>
     <div class="hero-icon-wrap">
       <img src="https://raw.githubusercontent.com/craftzcatdev/trolly-privacy/main/Icon.png" alt="Trolly App Icon" />
     </div>
-    <h1>Quản lý nhà trọ<br/><em>dễ dàng hơn bao giờ</em></h1>
+    <h1>Quản lý nhà trọ<em>dễ dàng hơn bao giờ</em></h1>
     <div class="hero-rule"><hr/><span>✦</span><hr/></div>
     <p>Ghi chỉ số điện nước, tính hóa đơn tự động và chia sẻ ngay cho người thuê qua Zalo — chỉ trong vài giây.</p>
     <div class="hero-cta">
@@ -287,6 +403,8 @@
     <p class="hero-note">🔒 Ứng dụng nội bộ — tài khoản được cấp bởi quản trị viên</p>
   </div>
 </section>
+
+<!-- FEATURES -->
 <section class="section" id="features">
   <div class="section-header">
     <p class="section-label">Tính năng</p>
@@ -303,6 +421,8 @@
     <div class="feature-card"><div class="feature-icon">☁️</div><h3>Đồng bộ đám mây</h3><p>Dữ liệu được lưu trữ an toàn trên Firebase, đồng bộ ngay lập tức trên mọi thiết bị được cấp phép.</p></div>
   </div>
 </section>
+
+<!-- HOW IT WORKS -->
 <div class="steps-bg">
   <div class="section">
     <div class="section-header">
@@ -319,6 +439,8 @@
     </div>
   </div>
 </div>
+
+<!-- CTA -->
 <section class="cta-section">
   <div class="cta-inner">
     <h2>Bắt đầu ngay hôm nay</h2>
@@ -329,6 +451,32 @@
     </a>
   </div>
 </section>
+
+<!-- HIRE / BUILD FOR YOU -->
+<section class="hire-section" id="hire">
+  <div class="hire-inner">
+    <span class="hire-badge">Dành cho chủ nhà trọ khác</span>
+    <h2>Bạn muốn có một app<br/><em>riêng cho nhà mình?</em></h2>
+    <div class="hire-rule"><hr/><span>✦</span><hr/></div>
+    <p>Trolly được xây dựng cho một nhóm chủ nhà trọ cụ thể và không mở đăng ký công khai. Nhưng nếu bạn đang tìm một giải pháp tương tự — tôi có thể giúp bạn xây dựng ứng dụng riêng.</p>
+    <p>Tư vấn miễn phí, đưa ra giải pháp phù hợp với quy mô và ngân sách của bạn.</p>
+    <div class="hire-features">
+      <span class="hire-tag">iOS App</span>
+      <span class="hire-tag">Firebase Backend</span>
+      <span class="hire-tag">Tính hóa đơn tự động</span>
+      <span class="hire-tag">Quét CCCD</span>
+      <span class="hire-tag">Chia sẻ Zalo</span>
+      <span class="hire-tag">Thương lượng giá</span>
+    </div>
+    <a class="btn-hire" href="mailto:craftzcatdev@gmail.com?subject=T%C6%B0%20v%E1%BA%A5n%20app%20qu%E1%BA%A3n%20l%C3%BD%20nh%C3%A0%20tr%E1%BB%8D">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      Liên hệ tư vấn miễn phí
+    </a>
+    <p class="hire-note">Phản hồi trong 1–2 ngày làm việc · craftzcatdev@gmail.com</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
@@ -343,5 +491,6 @@
     <p class="footer-copy">© 2026 Hai Nguyen / craftzcatdev · Trolly is an unlisted iOS app for authorized landlords.</p>
   </div>
 </footer>
+
 </body>
 </html>
